@@ -1,0 +1,23 @@
+---
+const pageTitle = "Blog";
+const homeTitle = "Índice";
+const aboutTitle = "Sobre mí";
+---
+<html lang="es">
+  <head>
+    <meta charset ="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">{homeTitle}</a>
+    <a href="/about/">{aboutTitle}</a>
+    <a href="/blog/">{pageTitle}</a>
+  
+    <h1>Mi blog hecho con Astro</h1>
+    <h1>Proyecto para aprender y adem&aacute;s intentar divulgar contenido.</h1>
+    <ul>
+        <li><a href="/posts/my-first-post/">Mi primer post</a></li>
+    </ul>
+</body>
+</html>

@@ -1,17 +1,20 @@
 ---
+const pageTitle = "Índice";
+const aboutTitle = "Sobre mí";
+const blogTitle = "Blog";
 ---
-
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Amador L&oacute;pez Parra - Pagina Personal</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
+		<a href="/">{pageTitle}</a>
+		<a href="/about/">{aboutTitle}</a>
+		<a href="/blog/">{blogTitle}</a>
+
 		<h1>Hola mundo!</h1>
 	</body>
 </html>
