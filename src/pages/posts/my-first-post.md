@@ -4,7 +4,7 @@ pubDate: 2023-03-03
 description: 'El primer post que realizo en el blog. Presentando ideas.'
 author: 'Amador L&oacute;pez Parra'
 image:
-    url: '/public/img/posts/first_post/first_post_image.jpg' 
+    url: '/img/posts/first_post/first_post_image.jpg' 
     alt: 'Portada del primer post. Imagen de la isla de El Hierro.'
 tags: ["astro", "blogging", "learning in public"]
 ---
