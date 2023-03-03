@@ -9,7 +9,7 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-<img src="/public/img/posts/first_post/first_post_image.jpg" alt="A starry night sky.">
+<img src="/img/posts/first_post/first_post_image.jpg" alt="A starry night sky.">
 
 # Mi primer blog
 Publicado el 03 de marzo de 2023.
