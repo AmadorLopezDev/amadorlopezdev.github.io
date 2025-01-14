@@ -1,0 +1,22 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  date: string;
+  link?: string;
+  tags?: string[];
+}
+const { title, description, date, link, tags } = Astro.props;
+---
+<article class="border-2 border-chalk p-6 rounded-lg bg-board-dark hover:bg-board transition-colors duration-300 shadow-md relative" data-tags={tags?.join(',')}>
+  <h2 class="title text-xl font-bold text-chalk mb-2 leading-tight relative"><a href={link}>{title}</a></h2>
+  <p class="text-gray-300 text-sm mb-4">{description}</p>
+  <p class="block text-gray-400 text-xs">{date}</p>
+  {tags && (
+    <div class="mt-2">
+      {tags.map(tag => (
+        <span class="tag mr-2 px-2 py-1 bg-gray-200 rounded">{tag}</span>
+      ))}
+    </div>
+  )}
+</article>

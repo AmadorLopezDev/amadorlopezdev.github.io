@@ -1,0 +1,28 @@
+---
+import BlogCard from "../components/BlogCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+const postsImport = import.meta.glob('../pages/content/blog/*.md', { eager: true });
+
+const posts = Object.values(postsImport).map((post: any) => ({
+  ...post.frontmatter,
+  url: post.url || '/', 
+}));
+
+const tags = [...new Set(posts.flatMap(post => post.tags || []))];
+---
+<Layout>
+  <h1 class="text-2xl font-bold text-chalk mb-6">Blog</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {posts.map(post => (
+      <BlogCard
+        title={post.title}
+        description={post.description}
+        date={post.date}
+        link={post.url}
+        tags={post.tags}
+      />
+    ))}
+  </div>
+</Layout>

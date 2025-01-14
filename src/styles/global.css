@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .slide-in {
+    animation: slideIn 0.5s ease-in-out;
+  }
+
+/* Estilo personalizado para el marco de madera */
+.pizarra-marco {
+    border: 20px solid #8B4513; /* Color marrón para el marco de madera */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para darle profundidad */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno para que el contenido no toque el marco */
+  }
+  
+  /* Estilo personalizado para el contenedor de pizarra */
+  .pizarra-container {
+    background-color: #2b2b2b; /* Color de fondo similar a una pizarra */
+    color: #f5f5f5; /* Color de texto similar a la tiza */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Asegurarse de que el fondo del cuerpo sea consistente */
+  body {
+    background-color: #2b2b2b; /* Color de fondo similar a una pizarra */
+  }
