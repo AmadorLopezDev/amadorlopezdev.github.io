@@ -53,4 +53,5 @@
   /* Asegurarse de que el fondo del cuerpo sea consistente */
   body {
     background-color: #2b2b2b; /* Color de fondo similar a una pizarra */
+    font-family: 'Schoolbell', cursive;
   }

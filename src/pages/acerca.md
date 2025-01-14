@@ -3,81 +3,103 @@ layout: ../layouts/Layout.astro
 title: Acerca de mí
 ---
 
+## 🙋 **Información**
+
+<br/>
+Trabajo desarrollando software desde hace mucho tiempo, posiblemente más del que me gustaría recordar 😉. Sin embargo, da lo mismo cuánto tiempo pase en este mundo, me encanta porque no ha dejado de apasionarme ni un ápice desde que entré por casualidad en 1998.
+
+<br/>
+<br/>
+
+Lo que te diga de mí hoy, posiblemente habrá cambiado algo mañana. Soy una persona que evoluciona, se sigue desarrollando y además me gusta salir de la zona de confort, retarme constantemente para poder avanzar cada vez más. Aunque tengo que reconocer, que con el paso de los años lo hago desde la serenidad. Los cambios los asimilo con determinación y templanza, pues la experiencia te da  perspectiva para entender mejor que la vida es cambio.
+
+<br/>
+
+A continuación, podrás leer algunas de las aptitudes y actitudes que he podido desarrollar a lo largo de estos años de trabajo y constante evolución. No es fácil poder reducir en poco espacio lo que tiene relación conmigo a nivel personal, pero sí voy a intentar dar unas pinceladas de lo que puedes esperar de mí si me tuvieras al lado trabajando contigo y pudieramos compartir los retos diarios.
+
+<hr style="border: 0; border-top: 2px solid #ccc; margin: 40px 0;">
+
 ## 🌟 **Soft Skills**
 
-<p></p>
+<br/>
 
-- **🤝 Trabajo en equipo**  
-  Capacidad para colaborar eficazmente en equipos multidisciplinarios y trabajar con metodologías ágiles como **Scrum**.
+**🤝 Trabajo en equipo:**  
+Llevo trabajando en equipo desde que empecé en este mundo del desarrollo de software, por lo que he desarrollado mi capacidad para colaborar con las personas.
 
-<p></p>
 
-- **🌀 Adaptabilidad**  
-  Flexibilidad para aprender y aplicar nuevas tecnologías, como integraciones con entidades externas y migraciones de bases de datos.
+Desde un equipo pequeño formado por profesionales del mismo ámbito, como en equipos más grandes con profesionales de diferentes ámbitos y también con personas externas al equipo para conseguir una mejor integración y consolidación del proyecto.
 
-<p></p>
+<br>
 
-- **💬 Comunicación efectiva**  
-  Interacción con stakeholders y equipos técnicos, facilitando la colaboración en el diseño de arquitecturas y soluciones de software.
+**🌀 Adaptabilidad:**  
+Tal y como la vida es cambio y nos tenemos que adaptar, en el desarrollo de software las tecnologías cambian y hay que adaptarse para asimilarlas y aprovechar lo mejor en cada momento.
 
-<p></p>
+Esto también requiere aprendizaje, lenguajes de programación, motores de bases de datos, procesos de integración, arquitecturas y patrones de software, así como metodologías.
 
-- **🧠 Resolución de problemas**  
-  Enfoque en soluciones innovadoras utilizando **TDD**, **DDD** y **SOLID** para abordar y resolver desafíos técnicos complejos.
+<br>
 
-<p></p>
+**💬 Comunicación efectiva:**  
+Interacción con stakeholders y equipos técnicos, facilitando la colaboración en el diseño de arquitecturas y soluciones de software.
 
-- **⏱️ Gestión del tiempo**  
-  Habilidad para gestionar proyectos con **Scrum**, entregando soluciones de forma eficiente y dentro de los plazos establecidos.
+El lenguaje ubicuo ayuda mucho a establecer puentes entre las diferentes partes afectadas por un desarrollo. Por otro lado, no menospreciemos el poder de escuchar y pensar antes de hablar. 
 
-<p></p>
+<br>
 
-- **👨‍💼 Liderazgo**  
-  Supervisión y toma de decisiones en proyectos clave, liderando la implementación de arquitecturas escalables y soluciones tecnológicas.
+**🧠 Resolución de problemas:**  
+No hay formulas mágicas, ni podemos aplicar un mismo patrón para todas las situaciones, por lo que hay que analizar el contexto y lo que se requiere.
 
-<hr>
+Sin embargo, hay practicas como desarrollar usando **TDD**, comprender el negocio aplicando **DDD** y codificar siempre pensando en **SOLID** y en **CODIGO LIMPIO** que nos van a ayudar en todo momento.
+
+<br>
+
+**👨‍💼 Liderazgo:**  
+Liderar no es mandar ni repartir funciones o tareas, liderar es servir de apoyo a quienes lo necesitan, es saber enfocar las situaciones a las personas para que las entiendan y aunen esfuerzos para solventarlas.
+
+El tiempo, las relaciones con diferentes cargos en una empresa y la comprensión del contexto han ayudado a poder ejercer de lider cuando se ha requerido.
+
+<hr style="border: 0; border-top: 2px solid #ccc; margin: 40px 0;">
 
 ## 🔧 **Hard Skills**
 
-<p></p>
+<br/>
 
 ### 🖥️ **Lenguajes de Programación**  
-  - 🧑‍💻 **Delphi**  
-  - 🧑‍💻 **TypeScript**  
-  - 🧑‍💻 **C#**  
-  - 🧑‍💻 **Python**  
+&nbsp;&nbsp;&nbsp; - ⌨️ **Delphi**
+&nbsp;&nbsp;&nbsp; - ⌨️ **TypeScript**
+&nbsp;&nbsp;&nbsp; - ⌨️ **C#**
+&nbsp;&nbsp;&nbsp; - ⌨️ **Python**
 
-<p></p>
+<br>
 
 ### 💾 **Bases de Datos**  
-  - 🗃️ **SQL Server**  
-  - 🗃️ **PostgreSQL**  
-  - 🗃️ **Firebird**  
-  - 🗃️ **Oracle**  
+&nbsp;&nbsp;&nbsp; - 💽 **SQL Server**
+&nbsp;&nbsp;&nbsp; - 💽 **PostgreSQL**
+&nbsp;&nbsp;&nbsp; - 💽 **Firebird**
+&nbsp;&nbsp;&nbsp; - 💽 **Oracle**
 
-<p></p>
+<br>
 
-### 🌍 **Desarrollo Web y API's**  
-  - 🌐 **GraphQL**  
-  - 🌐 **.Net**  
-  - 🌐 **NestJS**  
-  - 🌐 **Flask**  
+### 🌍 **Desarrollo Web y Framework's**  
+&nbsp;&nbsp;&nbsp; - 🌐 **GraphQL**
+&nbsp;&nbsp;&nbsp; - 🌐 **.Net**
+&nbsp;&nbsp;&nbsp; - 🌐 **NestJS**
+&nbsp;&nbsp;&nbsp; - 🌐 **Flask**
 
-<p></p>
+<br>
 
 ### ⚙️ **Principios y Metodologías de Desarrollo**  
-  - 🛠️ **SOLID**  
-  - 🛠️ **Clean Code**  
-  - 🛠️ **TDD** (Test Driven Development)  
-  - 🛠️ **DDD** (Domain Driven Design)  
+&nbsp;&nbsp;&nbsp; - 🛠️ **SOLID**
+&nbsp;&nbsp;&nbsp; - 🛠️ **Clean Code**
+&nbsp;&nbsp;&nbsp; - 🛠️ **TDD** (Test Driven Development)
+&nbsp;&nbsp;&nbsp; - 🛠️ **DDD** (Domain Driven Design)
 
-<p></p>
+<br>
 
-### ☁️ **Plataformas y Herramientas**  
-  - ☁️ **Azure DevOps**  
-  - ☁️ **Azure Cloud**  
+### 🌬️ **Plataformas y Herramientas**  
+&nbsp;&nbsp;&nbsp; - ☁️ **Azure DevOps**
+&nbsp;&nbsp;&nbsp; - ☁️ **Azure Cloud**
 
-<p></p>
+<br>
 
-### 🔄 **Metodología Ágil**  
-  - 🔄 **Scrum**  
+### 🤼 **Metodología Ágil**  
+&nbsp;&nbsp;&nbsp; - 🔄 **Scrum**
