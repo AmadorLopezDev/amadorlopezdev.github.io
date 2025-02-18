@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/Layout.astro
-title: Acerca de mí
+title: "Acerca de mí"
 ---
 
 ## 🙋 **Información**

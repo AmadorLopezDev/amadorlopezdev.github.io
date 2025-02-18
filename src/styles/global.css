@@ -49,6 +49,22 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+
+  .pizarra-container h1 {
+    @apply text-3xl font-bold mb-4;
+  }
+  
+  .pizarra-container h2 {
+    @apply text-2xl font-bold mt-6 mb-4;
+  }
+  
+  .pizarra-container h3 {
+    @apply text-xl font-bold mt-4 mb-2;
+  }
+  
+  .pizarra-container p {
+    @apply mb-4;
+  }
   
   /* Asegurarse de que el fondo del cuerpo sea consistente */
   body {
