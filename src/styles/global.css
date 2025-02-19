@@ -65,6 +65,18 @@
   .pizarra-container p {
     @apply mb-4;
   }
+
+  .pizarra-container ul {
+    @apply list-disc pl-5 mb-4;
+  }
+  
+  .pizarra-container ol {
+    @apply list-decimal pl-5 mb-4;
+  }
+
+  .pizarra-container li {
+    @apply mb-2;
+  }
   
   /* Asegurarse de que el fondo del cuerpo sea consistente */
   body {
