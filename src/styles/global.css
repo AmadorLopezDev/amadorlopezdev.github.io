@@ -77,6 +77,16 @@
   .pizarra-container li {
     @apply mb-2;
   }
+
+  .pizarra-container a {
+    color: #1e90ff; /* Color azul para los enlaces */
+    text-decoration: underline; /* Subrayar los enlaces */
+    cursor: pointer; /* Cambiar el cursor a pointer */
+  }
+  
+  .pizarra-container a:hover {
+    color: #ff4500; /* Cambiar el color al pasar el cursor por encima */
+  }
   
   /* Asegurarse de que el fondo del cuerpo sea consistente */
   body {

@@ -28,6 +28,10 @@ Puede que encuentres artículos muy personales y puede que te encuentres otros a
 
 Otra cosa que tengo que avisar, la intención es dedicarle un poco de tiempo a la semana, por lo que por ahora no sé si podré aportar más de un artículo a la semana o cada dos semanas. Sin embargo, si me empieza a entrar el gusanillo por compartir no descarto también acompañar algún artículo con un repositorio de código para acompañar.
 
+## ¿Cómo voy a enfocar el contenido?
+
+Pues bien, me gusta hablar sobre programación, pero también me gusta mucho el anime Naruto, por lo que me ha parecido una forma algo diferente de transmitir la información siempre que se pueda envuelta en una capa de ninjitsu 😉. Por lo que no te extrañe ver escritos con nombres de jutsus, caminos del ninja explicados o misiones especiales a realizar.
+
 ## Hasta la próxima
 
 Pues bueno, ya sabes un poco más lo que vas a poder ver/leer aquí, en los tiempos que corren, tener un blog no sé si es muy inteligente, ya que todo lo que se busca es imagen y audio, pero bueno como primer punto de partida para entretenerme no me parece mala idea.
