@@ -4,7 +4,6 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const { title = "Amador López Parra", image } = Astro.props.frontmatter || Astro.props;
-const gaTrackingId = import.meta.env.GA_TRACKING_ID;
 ---
 <!doctype html>
 <html lang="es">
@@ -14,14 +13,21 @@ const gaTrackingId = import.meta.env.GA_TRACKING_ID;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title} - {gaTrackingId}</title>
+        <title>{title}</title>
         <link
             rel="alternate"
             type="application/rss+xml"
             title="Amador López Parra"
             href={`${Astro.site}rss.xml`}
-        />
-       {gaTrackingId}
+        />       
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPQLVS5MQ0"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-ZPQLVS5MQ0');
+        </script>
     </head>
     <body class="bg-board-dark text-chalk flex flex-col min-h-screen text-lg">
         <div class="pizarra-marco flex flex-col flex-grow">
