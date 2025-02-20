@@ -1,0 +1,58 @@
+---  
+---
+
+<div id="cookie-banner" class="fixed bottom-0 right-0 bg-chalk border border-gray-300 p-4 rounded-lg z-50 max-w-xs shadow-lg" style="display: none;">
+    <p class="text-chalk">
+      Usamos cookies para mejorar tu experiencia y analizar el rendimiento de nuestro sitio. 
+      Para más información, consulta nuestra <a href="/politica-de-privacidad" class="text-blue-500 underline">Política de Privacidad</a>.
+    </p>
+    <div class="mt-4 flex justify-end">
+      <button id="accept-btn" class="bg-blue-500 text-white px-4 py-2 rounded mr-2">Aceptar</button>
+      <button id="reject-btn" class="bg-gray-600 text-white px-4 py-2 rounded">Rechazar</button>
+    </div>
+</div>
+  
+  <script is:inline>
+    function setCookie(name, value, days) {
+      const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
+      document.cookie = name + '=' + value + '; expires=' + expires + '; path=/';
+    }
+  
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
+    (function() {
+    if (!getCookie('cookie-consent')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+  })();
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      if (getCookie('cookie-consent')) {
+        document.getElementById('cookie-banner').style.display = 'none';
+        return;
+      }
+      
+      document.getElementById('accept-btn').addEventListener('click', () => {
+        setCookie('cookie-consent', 'granted', 365);
+        if (window.gtag) {
+          window.gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted'
+          });
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-ZPQLVS5MQ0');
+        }
+        document.getElementById('cookie-banner').style.display = 'none';
+      });
+  
+      document.getElementById('reject-btn').addEventListener('click', () => {
+        setCookie('cookie-consent', 'denied', 365);
+        document.getElementById('cookie-banner').style.display = 'none';
+      });
+    });
+  </script>

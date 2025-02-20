@@ -93,3 +93,40 @@
     background-color: #2b2b2b; /* Color de fondo similar a una pizarra */
     font-family: 'Schoolbell', cursive;
   }
+
+  #cookie-banner {
+    background-color: #2b2b2b; /* Fondo similar a la pizarra */
+    color: #f5f5f5; /* Texto similar a la tiza */
+    border: 1px solid #8B4513; /* Borde marrón */
+    padding: 16px;
+    border-radius: 8px;
+    z-index: 1000;
+    max-width: 320px;
+    font-family: 'Schoolbell', cursive;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  #cookie-banner p {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  #cookie-banner a {
+    color: #1e90ff;
+    text-decoration: underline;
+  }
+  #cookie-banner button {
+    margin-right: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #cookie-banner button#accept-btn {
+    background-color: #1e90ff;
+    color: #fff;
+  }
+  #cookie-banner button#reject-btn {
+    background-color: #6c757d;
+    color: #fff;
+  }
