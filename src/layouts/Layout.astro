@@ -14,6 +14,12 @@ const { title = "Amador López Parra", image } = Astro.props.frontmatter || Astr
         <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Amador López Parra"
+            href={`${Astro.site}rss.xml`}
+/>
     </head>
     <body class="bg-board-dark text-chalk flex flex-col min-h-screen text-lg">
         <div class="pizarra-marco flex flex-col flex-grow">
