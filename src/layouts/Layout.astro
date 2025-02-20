@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import ConsentBanner from '../components/ConsentBanner.astro';
 
 const { title = "Amador López Parra", image } = Astro.props.frontmatter || Astro.props;
 ---
@@ -20,14 +21,47 @@ const { title = "Amador López Parra", image } = Astro.props.frontmatter || Astr
             title="Amador López Parra"
             href={`${Astro.site}rss.xml`}
         />       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPQLVS5MQ0"></script>
-        <script>
+        <script is:inline>
+            function getCookie(name) {
+              const value = `; ${document.cookie}`;
+              const parts = value.split(`; ${name}=`);
+              if (parts.length === 2) return parts.pop().split(';').shift();
+              return null;
+            }
+            window.__cookieConsent = getCookie('cookie-consent');
+        </script>
+        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ZPQLVS5MQ0"></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied'
+            });
+            gtag('js', new Date());
+            if (window.__cookieConsent === 'granted') {
+              gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted'
+              });
+              gtag('config', 'G-ZPQLVS5MQ0');
+            }
+          </script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}            
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied'
+            });
+        </script>
+        <!--<script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-ZPQLVS5MQ0');
-        </script>
+        </script>-->
     </head>
     <body class="bg-board-dark text-chalk flex flex-col min-h-screen text-lg">
         <div class="pizarra-marco flex flex-col flex-grow">
@@ -40,6 +74,7 @@ const { title = "Amador López Parra", image } = Astro.props.frontmatter || Astr
             </main>
             <Footer/>
         </div>
+        <ConsentBanner />
         <script src="/menu.js" is:inline></script>
     </body>
 </html>
