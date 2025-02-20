@@ -95,6 +95,9 @@
   }
 
   #cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background-color: #2b2b2b; /* Fondo similar a la pizarra */
     color: #f5f5f5; /* Texto similar a la tiza */
     border: 1px solid #8B4513; /* Borde marrón */
@@ -122,11 +125,23 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  #cookie-banner button#accept-btn {
+  #accept-all-btn {
     background-color: #1e90ff;
     color: #fff;
   }
-  #cookie-banner button#reject-btn {
+  #customize-btn {
     background-color: #6c757d;
     color: #fff;
+  }
+  #reject-all-btn {
+    background-color: #ff4500;
+    color: #fff;
+  }
+  #save-preferences-btn {
+    background-color: #28a745;
+    color: #fff;
+    margin-top: 12px;
+  }
+  #cookie-settings div {
+    margin-bottom: 8px;
   }
