@@ -2,7 +2,7 @@
 import BlogCard from "../components/BlogCard.astro";
 import Layout from "../layouts/Layout.astro";
 
-const postsImport = import.meta.glob('../pages/content/blog/*.md', { eager: true });
+const postsImport = Object.values(import.meta.glob('../pages/content/blog/*.md', { eager: true }));
 
 const posts = Object.values(postsImport).map((post: any) => ({
   ...post.frontmatter,
