@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.fade-in {
-  animation: fadeIn 2s ease-in-out;
-}
 
 @keyframes fadeIn {
   from {
@@ -27,7 +24,7 @@
   }
   
   .fade-in {
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 0.75s ease-in-out;
   }
   
   .slide-in {

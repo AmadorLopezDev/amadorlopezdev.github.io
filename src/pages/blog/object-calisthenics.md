@@ -2,7 +2,7 @@
 title: "El camino del ninja dev: object calisthenics"
 description: "Un pequeño artículo sobre object calisthenics, reglas de POO que ayudan a obtener un código más limpio y mantenible"
 date: "2025-02-19"
-layout: ../../../layouts/Layout.astro
+layout: ../../layouts/Layout.astro
 tags: ["POO", "Object Calisthenics", "Programación", "Clean Code"]
 image: "/img/blog/2025-02-19-object-calisthenics.webp"
 ---
