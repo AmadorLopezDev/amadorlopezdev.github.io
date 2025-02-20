@@ -5,6 +5,7 @@ import '../styles/global.css';
 
 const { title = "Amador López Parra", image } = Astro.props.frontmatter || Astro.props;
 const gaTrackingId = import.meta.env.GA_TRACKING_ID;
+console.log(gaTrackingId);
 ---
 <!doctype html>
 <html lang="es">
@@ -14,7 +15,7 @@ const gaTrackingId = import.meta.env.GA_TRACKING_ID;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        <title>{title}, {gaTrackingId}</title>
         <link
             rel="alternate"
             type="application/rss+xml"
