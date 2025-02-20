@@ -2,7 +2,7 @@
 title: "Mi Primera Entrada"
 description: "Una introducción al tema del blog."
 date: "2025-01-14"
-layout: ../../../layouts/Layout.astro
+layout: ../../layouts/Layout.astro
 tags: ["Blog", "General"]
 image: "/img/blog/2025-02-18-first-post.png"
 ---
