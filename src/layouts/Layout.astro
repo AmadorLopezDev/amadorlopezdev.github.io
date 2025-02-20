@@ -22,14 +22,16 @@ const gaTrackingId = import.meta.env.GA_TRACKING_ID;
             href={`${Astro.site}rss.xml`}
         />
         <!-- Google tag (gtag.js) -->        
-        {gaTrackingId && (            
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}></script>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '{gaTrackingId}');
-            </script>
+        {gaTrackingId && (
+            <>
+                <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '{gaTrackingId}');
+                </script>
+            </>
        )}
     </head>
     <body class="bg-board-dark text-chalk flex flex-col min-h-screen text-lg">
