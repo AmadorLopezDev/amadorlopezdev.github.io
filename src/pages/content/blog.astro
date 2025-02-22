@@ -9,6 +9,8 @@ const posts = Object.values(postsImport).map((post: any) => ({
   url: post.url || '/', 
 }));
 
+posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
 const tags = [...new Set(posts.flatMap(post => post.tags || []))];
 ---
 <Layout title="Blog">
