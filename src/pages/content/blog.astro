@@ -1,23 +1,19 @@
 ---
 import BlogCard from "../../components/BlogCard.astro";
 import Layout from "../../layouts/Layout.astro";
+import { getSortedPosts, getPaginatedPosts } from "../../utils/posts";
 
-const postsImport = Object.values(import.meta.glob('../blog/*.md', { eager: true }));
+const POSTS_PER_PAGE = 2;
+const currentPage = 1;
 
-const posts = Object.values(postsImport).map((post: any) => ({
-  ...post.frontmatter,
-  url: post.url || '/', 
-}));
-
-posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-const tags = [...new Set(posts.flatMap(post => post.tags || []))];
+const posts = getSortedPosts();
+const { paginatedPosts, totalPages } = getPaginatedPosts(posts, currentPage, POSTS_PER_PAGE);
 ---
 <Layout title="Blog">
   <h1 class="text-2xl font-bold text-chalk mb-6">Blog</h1>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    {posts.map(post => (
+  <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {paginatedPosts.map((post: { title: string; description: string; date: string; url: string; tags: string[]; image: string }) => (
       <BlogCard
         title={post.title}
         description={post.description}
@@ -28,4 +24,10 @@ const tags = [...new Set(posts.flatMap(post => post.tags || []))];
       />
     ))}
   </div>
+
+  <div class="text-center mt-8">
+    <button id="load-more-button" class="bg-blue-500 text-white px-4 py-2 rounded" data-total-pages={totalPages}>Cargar más</button>
+  </div>
+
+  <script src="/utils/loadMore.js" type="module"></script>
 </Layout>
