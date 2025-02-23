@@ -156,3 +156,13 @@
       max-width: 20%;
     }
   }
+
+  .tag {
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 640px) {
+    .tag {
+      white-space: normal;
+    }
+  }
