@@ -5,7 +5,11 @@
       "Bash(npm outdated:*)",
       "Bash(npm install:*)",
       "Bash(npm uninstall:*)",
-      "Bash(npx update-browserslist-db@latest:*)"
+      "Bash(npx update-browserslist-db@latest:*)",
+      "Bash(npx taze -u)",
+      "Bash(npm audit fix:*)",
+      "Bash(npx astro check:*)",
+      "Bash(npm i:*)"
     ]
   }
 }
