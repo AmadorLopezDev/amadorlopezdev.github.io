@@ -9,7 +9,11 @@
       "Bash(npx taze -u)",
       "Bash(npm audit fix:*)",
       "Bash(npx astro check:*)",
-      "Bash(npm i:*)"
+      "Bash(npm i:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npx @anthropic-ai/claude-code mcp add:*)",
+      "Bash(start http://localhost:4321)",
+      "mcp__playwright__browser_navigate"
     ]
   }
 }
