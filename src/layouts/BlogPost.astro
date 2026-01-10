@@ -36,9 +36,45 @@ const relatedPosts: Post[] = allPosts
     post.tags?.some((tag: string) => tags?.includes(tag))
   )
   .slice(0, MAX_RELATED_POSTS);
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": frontmatter.description || "",
+  "image": image ? new URL(image, Astro.site).toString() : undefined,
+  "datePublished": date,
+  "dateModified": date,
+  "author": {
+    "@type": "Person",
+    "name": "Amador López Parra",
+    "url": Astro.site?.toString(),
+    "jobTitle": "Senior Software Engineer",
+    "sameAs": [
+      "https://www.linkedin.com/in/amadorlopez",
+      "https://github.com/amadorlopezdev"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Amador López Parra",
+    "logo": {
+      "@type": "ImageObject",
+      "url": new URL("/favicon.png", Astro.site).toString()
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": new URL(Astro.url.pathname, Astro.site).toString()
+  },
+  "keywords": tags?.join(", ") || "",
+  "wordCount": wordCount,
+  "timeRequired": `PT${readingTime}M`
+};
 ---
 
-<Layout title={title}>
+<Layout title={title} description={frontmatter.description} image={image} type="article">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)} />
   <article class="relative">
 
     <!-- Imagen destacada (hero) -->

@@ -5,7 +5,15 @@ import '../styles/global.css';
 import '../styles/animations.css';
 import ConsentBanner from '../components/ConsentBanner.astro';
 
-const { title = "Amador López Parra" } = Astro.props.frontmatter || Astro.props;
+const {
+  title = "Amador López Parra",
+  description = "Senior Software Engineer especializado en .NET, Clean Architecture y DDD. Blog sobre desarrollo de software, buenas prácticas y arquitectura limpia.",
+  image = "/img/og-default.jpg",
+  type = "website"
+} = Astro.props.frontmatter || Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
 ---
 <!doctype html>
 <html lang="es">
@@ -19,6 +27,28 @@ const { title = "Amador López Parra" } = Astro.props.frontmatter || Astro.props
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+
+        <!-- SEO Meta Tags -->
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalURL} />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content={type} />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="Amador López Parra" />
+        <meta property="og:locale" content="es_ES" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalURL} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+
+        <!-- RSS Feed -->
         <link
             rel="alternate"
             type="application/rss+xml"

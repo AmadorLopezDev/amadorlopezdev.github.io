@@ -11,7 +11,10 @@ const posts = getSortedPosts();
 const { paginatedPosts, totalPages } = getPaginatedPosts(posts, currentPage, POSTS_PER_PAGE);
 ---
 
-<Layout title="Blog - Amador López Parra">
+<Layout
+  title="Blog - Amador López Parra"
+  description="Artículos sobre desarrollo de software, Clean Code, Object Calisthenics, .NET, C#, arquitectura limpia y buenas prácticas de programación. Tutoriales y guías para desarrolladores."
+>
   <section class="
     max-w-7xl mx-auto
     px-6 md:px-12 lg:px-24
