@@ -1,0 +1,390 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Badge from '../../components/Badge.astro';
+import Button from '../../components/Button.astro';
+---
+
+<Layout
+  title="Acerca de - Amador López Parra"
+  description="Senior Software Engineer con +25 años de experiencia. Especializado en .NET, Clean Architecture, DDD y liderazgo servicial. Descubre mi filosofía de trabajo basada en la adaptación, la colaboración y las buenas prácticas."
+>
+
+  <!-- Hero Section -->
+  <section class="
+    relative
+    bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary
+    border-b border-border
+  ">
+    <div class="
+      max-w-5xl mx-auto
+      px-6 md:px-12 lg:px-24
+      py-16 md:py-24
+    ">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+
+        <!-- Imagen de perfil (placeholder - añadir cuando tengas la imagen) -->
+        <div class="
+          flex-shrink-0
+          w-48 h-48 md:w-64 md:h-64
+          rounded-full
+          bg-gradient-to-br from-primary-500 to-accent-500
+          p-1
+          animate-fade-in
+        ">
+          <div class="
+            w-full h-full
+            rounded-full
+            bg-bg-secondary
+            flex items-center justify-center
+            text-6xl md:text-8xl font-bold
+            text-text-primary
+          ">
+            AL
+          </div>
+        </div>
+
+        <!-- Bio corta -->
+        <div class="flex-1 space-y-6 text-center md:text-left">
+          <h1 class="
+            text-4xl md:text-5xl font-bold
+            text-text-primary
+            animate-fade-in-up
+          ">
+            Hola, soy Amador
+          </h1>
+          <p class="
+            text-xl text-text-secondary
+            leading-relaxed
+            animate-fade-in-up animation-delay-200
+          ">
+            Senior Software Engineer con más de 25 años construyendo software desde la adaptación, la serenidad y el compromiso con la excelencia técnica.
+          </p>
+          <div class="
+            flex flex-wrap gap-3 justify-center md:justify-start
+            animate-fade-in-up animation-delay-300
+          ">
+            <Badge variant="tech" tech="dotnet">.NET 10</Badge>
+            <Badge variant="tech" tech="azure">Azure</Badge>
+            <Badge variant="tech" tech="typescript">TypeScript</Badge>
+            <Badge variant="status">Disponible</Badge>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <article class="
+    max-w-4xl mx-auto
+    px-6 md:px-12 lg:px-24
+    py-16
+  ">
+
+    <!-- Quién soy -->
+    <section class="mb-16 space-y-8 reveal">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="text-4xl">👤</div>
+        <h2 class="text-3xl font-bold text-text-primary">¿Quién soy?</h2>
+      </div>
+
+      <div class="bg-bg-secondary border border-border rounded-xl p-8 space-y-6">
+        <p class="text-lg text-text-secondary leading-relaxed">
+          Soy un desarrollador de software con <strong class="text-primary">más de 25 años de experiencia</strong> que sigue apasionado por su trabajo. Entré en este mundo por casualidad en 1998 y desde entonces no he parado de aprender, evolucionar y enfrentarme a nuevos retos.
+        </p>
+
+        <p class="text-lg text-text-secondary leading-relaxed">
+          Me especializo en <strong class="text-primary">.NET, C#, Clean Architecture y Domain-Driven Design</strong>, pero lo que realmente me define no son las tecnologías, sino mi forma de trabajar: con <strong class="text-primary">adaptación, serenidad y compromiso</strong> con la calidad del código y el bienestar del equipo.
+        </p>
+
+        <p class="text-lg text-text-secondary leading-relaxed">
+          Creo en el <strong class="text-primary">liderazgo servicial</strong>, en escuchar antes de hablar, y en que el mejor código es el que resuelve problemas reales sin generar complejidad innecesaria.
+        </p>
+      </div>
+    </section>
+
+    <hr class="border-border my-12" />
+
+    <!-- Mi filosofía -->
+    <section class="mb-16 space-y-8 reveal">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="text-4xl">💡</div>
+        <h2 class="text-3xl font-bold text-text-primary">Mi filosofía de trabajo</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-bg-secondary border border-border rounded-xl p-6 space-y-3">
+          <h3 class="text-xl font-bold text-text-primary flex items-center gap-3">
+            <span class="text-2xl">🌀</span>
+            Adaptación serena
+          </h3>
+          <p class="text-text-secondary leading-relaxed">
+            La vida es cambio, y el desarrollo de software también. Con los años he aprendido a asimilar las transformaciones con determinación y templanza, sin perder el foco en lo importante.
+          </p>
+        </div>
+
+        <div class="bg-bg-secondary border border-border rounded-xl p-6 space-y-3">
+          <h3 class="text-xl font-bold text-text-primary flex items-center gap-3">
+            <span class="text-2xl">📚</span>
+            Aprendizaje continuo
+          </h3>
+          <p class="text-text-secondary leading-relaxed">
+            Lo que sé hoy posiblemente habrá evolucionado mañana. Me gusta salir de mi zona de confort y aprender nuevas tecnologías, patrones y formas de resolver problemas.
+          </p>
+        </div>
+
+        <div class="bg-bg-secondary border border-border rounded-xl p-6 space-y-3">
+          <h3 class="text-xl font-bold text-text-primary flex items-center gap-3">
+            <span class="text-2xl">🎯</span>
+            Enfoque en valor
+          </h3>
+          <p class="text-text-secondary leading-relaxed">
+            No hay fórmulas mágicas. Cada contexto requiere su solución. Prefiero código simple que funciona sobre arquitecturas complejas que impresionan pero no aportan.
+          </p>
+        </div>
+
+        <div class="bg-bg-secondary border border-border rounded-xl p-6 space-y-3">
+          <h3 class="text-xl font-bold text-text-primary flex items-center gap-3">
+            <span class="text-2xl">🤝</span>
+            Colaboración honesta
+          </h3>
+          <p class="text-text-secondary leading-relaxed">
+            Creo en la comunicación clara, en escuchar activamente y en que un equipo unido siempre supera a un grupo de individuos brillantes trabajando en silos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-border my-12" />
+
+    <!-- Cómo trabajo -->
+    <section class="mb-16 space-y-8 reveal">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="text-4xl">⚙️</div>
+        <h2 class="text-3xl font-bold text-text-primary">Cómo trabajo</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Comunicación clara -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+          transition-all duration-300
+          hover:border-border-emphasis
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-3 flex items-center gap-3">
+            <span class="text-2xl">💬</span>
+            Comunicación clara
+          </h3>
+          <p class="text-text-secondary leading-relaxed">
+            Utilizo lenguaje ubicuo para tender puentes entre equipos técnicos y stakeholders. Escucho antes de hablar y pienso antes de proponer soluciones.
+          </p>
+        </div>
+
+        <!-- Liderazgo servicial -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+          transition-all duration-300
+          hover:border-border-emphasis
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-3 flex items-center gap-3">
+            <span class="text-2xl">🤝</span>
+            Liderazgo servicial
+          </h3>
+          <p class="text-text-secondary leading-relaxed">
+            Liderar no es mandar, es servir de apoyo. Mi experiencia me permite enfocar las situaciones para que el equipo las entienda y una esfuerzos hacia la solución.
+          </p>
+        </div>
+
+        <!-- Buenas prácticas -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+          transition-all duration-300
+          hover:border-border-emphasis
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-3 flex items-center gap-3">
+            <span class="text-2xl">✨</span>
+            Buenas prácticas
+          </h3>
+          <p class="text-text-secondary leading-relaxed">
+            Desarrollo con <strong class="text-primary">TDD</strong>, aplico <strong class="text-primary">DDD</strong> para comprender el negocio y codifico siguiendo <strong class="text-primary">SOLID</strong> y <strong class="text-primary">Clean Code</strong>.
+          </p>
+        </div>
+
+        <!-- Colaboración -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+          transition-all duration-300
+          hover:border-border-emphasis
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-3 flex items-center gap-3">
+            <span class="text-2xl">👥</span>
+            Colaboración
+          </h3>
+          <p class="text-text-secondary leading-relaxed">
+            He trabajado en equipos pequeños, grandes, multidisciplinares y con stakeholders externos. Sé que un equipo unido vale más que genios aislados.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-border my-12" />
+
+    <!-- Habilidades técnicas -->
+    <section class="mb-16 space-y-8 reveal">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="text-4xl">🔧</div>
+        <h2 class="text-3xl font-bold text-text-primary">Habilidades técnicas</h2>
+      </div>
+
+      <div class="bg-bg-secondary border border-border rounded-xl p-8 space-y-8">
+        <!-- Stack principal -->
+        <div>
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-3">
+            <span class="text-2xl">⚡</span>
+            Stack principal
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <Badge variant="tech" tech="dotnet">.NET 10</Badge>
+            <Badge variant="tech" tech="dotnet">C# 14</Badge>
+            <Badge variant="tech" tech="typescript">TypeScript</Badge>
+            <Badge variant="tech" tech="azure">Azure</Badge>
+            <Badge variant="tech" tech="sql">SQL Server</Badge>
+            <Badge variant="tech" tech="dotnet">Blazor</Badge>
+          </div>
+        </div>
+
+        <!-- Arquitectura y patrones -->
+        <div>
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-3">
+            <span class="text-2xl">🏗️</span>
+            Arquitectura y patrones
+          </h3>
+          <ul class="grid md:grid-cols-2 gap-3 text-text-secondary">
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">Clean Architecture</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">Domain-Driven Design</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">SOLID</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              Vertical Slice Architecture
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              CQRS & Event Sourcing
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              Microservicios
+            </li>
+          </ul>
+        </div>
+
+        <!-- Prácticas de desarrollo -->
+        <div>
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-3">
+            <span class="text-2xl">✅</span>
+            Prácticas de desarrollo
+          </h3>
+          <ul class="grid md:grid-cols-2 gap-3 text-text-secondary">
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">Test-Driven Development</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">Clean Code</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              CI/CD (Azure DevOps, GitHub Actions)
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              Code Reviews
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              Pair Programming
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              Refactoring
+            </li>
+          </ul>
+        </div>
+
+        <!-- Metodologías -->
+        <div>
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-3">
+            <span class="text-2xl">🔄</span>
+            Metodologías ágiles
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <Badge variant="category">Scrum</Badge>
+            <Badge variant="category">Extreme Programming (XP)</Badge>
+            <Badge variant="category">Kanban</Badge>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="
+      mt-16 pt-12
+      border-t border-border
+      text-center
+      space-y-8
+      reveal
+    ">
+      <div class="space-y-4">
+        <h2 class="text-3xl font-bold text-text-primary">
+          ¿Interesado en mi trabajo?
+        </h2>
+        <p class="text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
+           Descubre mis artículos sobre desarrollo de software, arquitectura limpia y buenas prácticas de programación. O conecta conmigo en LinkedIn.
+      </p
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-4 justify-center">
+        <Button variant="primary" href="https://www.linkedin.com/in/amadorlopezparra/">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+          </svg>
+          Conectar en LinkedIn
+        </Button>
+        <Button variant="secondary" href="/content/blog">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+          Leer mis artículos
+        </Button>
+      </div>
+
+      <p class="text-sm text-text-tertiary mt-8">
+        También puedes explorar mi <a href="/" class="text-primary hover:underline">página principal</a> para conocer más sobre mi trabajo.
+      </p>
+    </section>
+
+  </article>
+
+</Layout>

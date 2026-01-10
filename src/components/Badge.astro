@@ -1,0 +1,29 @@
+---
+export interface Props {
+  variant?: 'tech' | 'status' | 'category';
+  tech?: 'dotnet' | 'azure' | 'typescript' | 'python' | 'sql';
+  class?: string;
+}
+
+const { variant = 'tech', tech = 'dotnet', class: className = '' } = Astro.props;
+
+const techColors = {
+  dotnet: 'bg-tech-dotnet/10 text-tech-dotnet border-tech-dotnet/20',
+  azure: 'bg-tech-azure/10 text-tech-azure border-tech-azure/20',
+  typescript: 'bg-tech-typescript/10 text-tech-typescript border-tech-typescript/20',
+  python: 'bg-tech-python/10 text-tech-python border-tech-python/20',
+  sql: 'bg-tech-sql/10 text-tech-sql border-tech-sql/20',
+};
+
+const variants = {
+  tech: `${techColors[tech]} transition-all duration-200 hover:scale-105`,
+  status: 'bg-success/10 text-success border-success/20',
+  category: 'bg-primary/10 text-primary border-primary/20',
+};
+
+const baseClasses = 'inline-flex items-center px-3 py-1 text-xs font-medium rounded-full border';
+---
+
+<span class={`${baseClasses} ${variants[variant]} ${className}`}>
+  <slot />
+</span>

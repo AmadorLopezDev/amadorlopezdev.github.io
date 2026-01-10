@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.75s ease-in-out;
+  }
+  
+  .slide-in {
+    animation: slideIn 0.5s ease-in-out;
+  }
+
+/* Estilo personalizado para el marco de madera */
+.pizarra-marco {
+    border: 20px solid #8B4513; /* Color marrón para el marco de madera */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para darle profundidad */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno para que el contenido no toque el marco */
+  }
+  
+  /* Estilo personalizado para el contenedor de pizarra */
+  .pizarra-container {
+    background-color: #2b2b2b; /* Color de fondo similar a una pizarra */
+    color: #f5f5f5; /* Color de texto similar a la tiza */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .pizarra-container h1 {
+    @apply text-3xl font-bold mb-4;
+  }
+  
+  .pizarra-container h2 {
+    @apply text-2xl font-bold mt-6 mb-4;
+  }
+  
+  .pizarra-container h3 {
+    @apply text-xl font-bold mt-4 mb-2;
+  }
+  
+  .pizarra-container p {
+    @apply mb-4;
+  }
+
+  .pizarra-container ul {
+    @apply list-disc pl-5 mb-4;
+  }
+  
+  .pizarra-container ol {
+    @apply list-decimal pl-5 mb-4;
+  }
+
+  .pizarra-container li {
+    @apply mb-2;
+  }
+
+  .pizarra-container a {
+    color: #1e90ff; /* Color azul para los enlaces */
+    text-decoration: underline; /* Subrayar los enlaces */
+    cursor: pointer; /* Cambiar el cursor a pointer */
+  }
+  
+  .pizarra-container a:hover {
+    color: #ff4500; /* Cambiar el color al pasar el cursor por encima */
+  }
+  
+  /* Asegurarse de que el fondo del cuerpo sea consistente */
+  body {
+    background-color: #2b2b2b; /* Color de fondo similar a una pizarra */
+    font-family: 'Schoolbell', cursive;
+  }
+
+  #cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2b2b2b; /* Fondo similar a la pizarra */
+    color: #f5f5f5; /* Texto similar a la tiza */
+    border: 1px solid #8B4513; /* Borde marrón */
+    padding: 16px;
+    border-radius: 8px;
+    z-index: 1000;
+    max-width: 320px;
+    font-family: 'Schoolbell', cursive;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  #cookie-banner p {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  #cookie-banner a {
+    color: #1e90ff;
+    text-decoration: underline;
+  }
+  #cookie-banner button {
+    margin-right: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #accept-all-btn {
+    background-color: #1e90ff;
+    color: #fff;
+  }
+  #customize-btn {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  #reject-all-btn {
+    background-color: #ff4500;
+    color: #fff;
+  }
+  #save-preferences-btn {
+    background-color: #28a745;
+    color: #fff;
+    margin-top: 12px;
+  }
+  #cookie-settings div {
+    margin-bottom: 8px;
+  }
+
+  .responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;    
+    margin: 0 auto;
+    left: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .responsive-img {
+      max-width: 20%;
+    }
+  }
+
+  .tag {
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 640px) {
+    .tag {
+      white-space: normal;
+    }
+  }

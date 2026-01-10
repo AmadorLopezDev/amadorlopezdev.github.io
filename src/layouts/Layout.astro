@@ -1,0 +1,255 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import '../styles/animations.css';
+import ConsentBanner from '../components/ConsentBanner.astro';
+
+const {
+  title = "Amador López Parra",
+  description = "Senior Software Engineer especializado en .NET, Clean Architecture y DDD. Blog sobre desarrollo de software, buenas prácticas y arquitectura limpia.",
+  image = "/img/og-default.jpg",
+  type = "website"
+} = Astro.props.frontmatter || Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
+---
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+
+        <!-- SEO Meta Tags -->
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalURL} />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content={type} />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="Amador López Parra" />
+        <meta property="og:locale" content="es_ES" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalURL} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+
+        <!-- RSS Feed -->
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Amador López Parra"
+            href={`${Astro.site}rss.xml`}
+        />       
+        <script is:inline>
+            function getCookie(name) {
+              const value = `; ${document.cookie}`;
+              const parts = value.split(`; ${name}=`);
+              if (parts.length === 2) return parts.pop().split(';').shift();
+              return null;
+            }
+            window.__cookieConsent = getCookie('cookie-consent');
+        </script>
+        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ZPQLVS5MQ0"></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied'
+            });
+            gtag('js', new Date());
+            if (window.__cookieConsent === 'granted') {
+              gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted'
+              });
+              gtag('config', 'G-ZPQLVS5MQ0');
+            }
+          </script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}            
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied'
+            });
+        </script>
+        <!-- Google Tag Manager -->
+        <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TSSNMPXZ');</script>
+    </head>
+    <body class="bg-bg-primary text-text-primary flex flex-col min-h-screen font-sans">
+        <!-- Reading Progress Bar (solo visible en posts de blog) -->
+        <div
+          id="reading-progress"
+          class="
+            fixed top-0 left-0 z-50
+            h-1
+            bg-gradient-to-r from-primary-500 to-accent-500
+            shadow-lg shadow-primary-500/50
+            transition-all duration-100 ease-out
+            origin-left
+            hidden
+          "
+          style="width: 0%; transform: scaleX(0);"
+          data-enabled="false"
+        ></div>
+
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSSNMPXZ"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <div class="flex flex-col flex-grow">
+            <Header/>
+            <main class="flex-grow">
+                <slot />
+            </main>
+            <Footer/>
+        </div>
+        <ConsentBanner />
+
+        <!-- Back to Top Button -->
+        <button
+          id="back-to-top"
+          class="
+            fixed bottom-8 right-8 z-40
+            w-12 h-12
+            flex items-center justify-center
+            bg-primary-500 hover:bg-primary-400
+            text-white
+            rounded-full
+            shadow-lg shadow-primary-500/30
+            transition-all duration-300 ease-in-out
+            opacity-0 scale-0 pointer-events-none
+            hover:scale-110
+            focus:outline-none
+            focus:ring-2 focus:ring-primary-500
+            focus:ring-offset-2 focus:ring-offset-bg-primary
+          "
+          aria-label="Volver arriba"
+          data-visible="false"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+
+        <script src="/utils/menu.js" is:inline></script>
+
+        <!-- Scroll Reveal Intersection Observer -->
+        <script>
+          // Configurar Intersection Observer para scroll reveal
+          const revealObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('revealed');
+                  // Dejar de observar después de revelar (una sola vez)
+                  revealObserver.unobserve(entry.target);
+                }
+              });
+            },
+            {
+              threshold: 0.1,
+              rootMargin: '0px 0px -50px 0px'
+            }
+          );
+
+          // Observar todos los elementos con clase 'reveal'
+          function initRevealObserver() {
+            document.querySelectorAll('.reveal, .reveal-fade, .reveal-scale, .reveal-slide-left').forEach((el) => {
+              revealObserver.observe(el);
+            });
+          }
+
+          // Inicializar en load
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initRevealObserver);
+          } else {
+            initRevealObserver();
+          }
+
+          // Re-observar cuando se carga contenido dinámico (para "cargar más")
+          window.addEventListener('contentLoaded', initRevealObserver);
+        </script>
+
+        <!-- Reading Progress Bar -->
+        <script>
+          // Detectar si estamos en un post de blog
+          const isBlogPost = window.location.pathname.startsWith('/blog/') &&
+                            !window.location.pathname.includes('/page/');
+
+          const progressBar = document.getElementById('reading-progress');
+
+          if (isBlogPost && progressBar) {
+            // Mostrar la barra en posts
+            progressBar.classList.remove('hidden');
+            progressBar.setAttribute('data-enabled', 'true');
+
+            function updateReadingProgress() {
+              if (!progressBar) return;
+
+              const windowHeight = window.innerHeight;
+              const documentHeight = document.documentElement.scrollHeight;
+              const scrollableDistance = documentHeight - windowHeight;
+              const scrolled = window.scrollY;
+              const progress = Math.min((scrolled / scrollableDistance) * 100, 100);
+
+              progressBar.style.transform = `scaleX(${progress / 100})`;
+              progressBar.style.width = '100%';
+            }
+
+            // Listeners
+            window.addEventListener('scroll', updateReadingProgress, { passive: true });
+            window.addEventListener('resize', updateReadingProgress, { passive: true });
+
+            // Init on load
+            updateReadingProgress();
+          }
+        </script>
+
+        <!-- Back to Top Button Script -->
+        <script>
+          const backToTopButton = document.getElementById('back-to-top');
+
+          if (backToTopButton) {
+            // Mostrar/ocultar según scroll
+            window.addEventListener('scroll', () => {
+              if (window.scrollY > 300) {
+                backToTopButton.setAttribute('data-visible', 'true');
+                backToTopButton.classList.remove('opacity-0', 'scale-0', 'pointer-events-none');
+                backToTopButton.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+              } else {
+                backToTopButton.setAttribute('data-visible', 'false');
+                backToTopButton.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+                backToTopButton.classList.add('opacity-0', 'scale-0', 'pointer-events-none');
+              }
+            }, { passive: true });
+
+            // Click para scroll to top
+            backToTopButton.addEventListener('click', () => {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              });
+            });
+          }
+        </script>
+    </body>
+</html>

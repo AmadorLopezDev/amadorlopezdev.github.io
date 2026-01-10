@@ -1,0 +1,157 @@
+<div id="cookie-banner" style="display: none;">
+  <!-- Banner Principal -->
+  <div id="banner-main">
+    <p>
+      Usamos cookies para mejorar tu experiencia, analizar el rendimiento de nuestro sitio y ofrecer publicidad personalizada.
+      Para más información, consulta nuestra
+      <a href="/legal/politica-de-cookies">Política de cookies</a>.
+    </p>
+
+    <div id="banner-buttons">
+      <button id="accept-all-btn">Aceptar todo</button>
+      <button id="customize-btn">Personalizar</button>
+      <button id="reject-all-btn">Rechazar todo</button>
+    </div>
+  </div>
+
+  <!-- Panel de Personalización -->
+  <div id="cookie-settings" style="display: none;">
+    <h3 style="margin-bottom: 8px; font-weight: bold;">Personalizar cookies</h3>
+    <p style="margin-bottom: 12px; font-size: 13px;">
+      Selecciona las categorías de cookies que deseas permitir:
+    </p>
+
+    <form id="cookie-form">
+      <!-- Cookies necesarias -->
+      <div>
+        <label>
+          <input type="checkbox" id="necessary" name="necessary" checked disabled style="margin-right: 6px;">
+          Cookies estrictamente necesarias
+        </label>
+        <p style="font-size: 12px; margin-left: 22px; opacity: 0.8;">
+          Siempre activadas. Necesarias para el funcionamiento básico del sitio.
+        </p>
+      </div>
+
+      <!-- Cookies de análisis -->
+      <div>
+        <label>
+          <input type="checkbox" id="analytics" name="analytics" style="margin-right: 6px;">
+          Cookies de análisis y rendimiento
+        </label>
+        <p style="font-size: 12px; margin-left: 22px; opacity: 0.8;">
+          Nos ayudan a entender cómo los visitantes interactúan con el sitio web.
+        </p>
+      </div>
+
+      <!-- Cookies de publicidad -->
+      <div>
+        <label>
+          <input type="checkbox" id="advertising" name="advertising" style="margin-right: 6px;">
+          Cookies de publicidad y marketing
+        </label>
+        <p style="font-size: 12px; margin-left: 22px; opacity: 0.8;">
+          Se utilizan para ofrecer anuncios más relevantes para ti y tus intereses.
+        </p>
+      </div>
+
+      <button type="button" id="save-preferences-btn">Guardar preferencias</button>
+      <button type="button" id="cancel-customize-btn" style="background-color: #6c757d;">Volver</button>
+    </form>
+  </div>
+</div>
+
+<script is:inline>
+function setCookie(name, value, days) {
+  const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
+  document.cookie = name + '=' + value + '; expires=' + expires + '; path=/';
+}
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+  return null;
+}
+
+function applyConsent(preferences) {
+  if (window.gtag) {
+    window.gtag('consent', 'update', {
+      'analytics_storage': preferences.analytics ? 'granted' : 'denied'
+    });
+    if (preferences.analytics) {
+      window.gtag('config', 'G-ZPQLVS5MQ0');
+    }
+    window.gtag('consent', 'update', {
+      'ad_storage': preferences.advertising ? 'granted' : 'denied'
+    });
+  }
+}
+
+function showBanner() {
+  const banner = document.getElementById('cookie-banner');
+  banner.style.display = 'block';
+}
+
+function hideBanner() {
+  const banner = document.getElementById('cookie-banner');
+  banner.style.display = 'none';
+}
+
+(function() {
+  if (!getCookie('cookie-consent-preferences')) {
+    showBanner();
+  }
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (getCookie('cookie-consent-preferences')) return;
+
+  const acceptAllBtn = document.getElementById('accept-all-btn');
+  const customizeBtn = document.getElementById('customize-btn');
+  const savePreferencesBtn = document.getElementById('save-preferences-btn');
+  const rejectAllBtn = document.getElementById('reject-all-btn');
+  const cancelCustomizeBtn = document.getElementById('cancel-customize-btn');
+  const bannerMain = document.getElementById('banner-main');
+  const cookieSettings = document.getElementById('cookie-settings');
+
+  acceptAllBtn.addEventListener('click', () => {
+    const preferences = {
+      analytics: true,
+      advertising: true
+    };
+    setCookie('cookie-consent-preferences', JSON.stringify(preferences), 365);
+    applyConsent(preferences);
+    hideBanner();
+  });
+
+  customizeBtn.addEventListener('click', () => {
+    bannerMain.style.display = 'none';
+    cookieSettings.style.display = 'block';
+  });
+
+  cancelCustomizeBtn.addEventListener('click', () => {
+    cookieSettings.style.display = 'none';
+    bannerMain.style.display = 'block';
+  });
+
+  savePreferencesBtn.addEventListener('click', () => {
+    const analytics = document.getElementById('analytics').checked;
+    const advertising = document.getElementById('advertising').checked;
+    const preferences = { analytics, advertising };
+    setCookie('cookie-consent-preferences', JSON.stringify(preferences), 365);
+    applyConsent(preferences);
+    hideBanner();
+  });
+
+  rejectAllBtn.addEventListener('click', () => {
+    const preferences = {
+      analytics: false,
+      advertising: false
+    };
+    setCookie('cookie-consent-preferences', JSON.stringify(preferences), 365);
+    applyConsent(preferences);
+    hideBanner();
+  });
+});
+</script>
