@@ -53,7 +53,7 @@
 ## 🎨 FASE 2: UI DESIGN (✅ COMPLETADO)
 
 **Responsable:** UI Designer
-**Skill:** `.claude/skills/skill-ui-styling.md`
+**Skill:** `.claude/skills/uix/skill-ui-styling.md`
 **Duración:** 1 sesión
 **Artefactos generados:**
 - ✅ `.claude/design/ui-design-system-complete.md` (Documento maestro)
@@ -110,7 +110,7 @@
 ## ✨ FASE 3: INTERACTION DESIGN (✅ COMPLETADO)
 
 **Responsable:** Interaction Designer
-**Skill:** `.claude/skills/skill-interaction-polish.md`
+**Skill:** `.claude/skills/uix/skill-interaction-polish.md`
 **Duración:** 1 sesión
 **Artefactos generados:**
 - ✅ `.claude/design/interaction-design-complete.md` (Documento maestro)
@@ -163,7 +163,7 @@
 ## 🛠️ FASE 4: FRONTEND ENGINEERING (⏸️ PENDIENTE)
 
 **Responsable:** Frontend Engineer
-**Skill:** `.claude/skills/skill-frontend-engine.md`
+**Skill:** `.claude/skills/development/skill-frontend-engine.md`
 **Artefactos a generar:**
 - Componentes implementados
 - Tests (si aplica)
@@ -269,10 +269,19 @@
 ├── roadmap/
 │   └── redesign-roadmap.md             ✅ Este archivo
 └── skills/
-    ├── skill-ux-audit.md               ✅ Usado
-    ├── skill-ui-styling.md             ⏳ Siguiente
-    ├── skill-interaction-polish.md     ⏸️ Pendiente
-    └── skill-frontend-engine.md        ⏸️ Pendiente
+    ├── development/
+    │   ├── skill-quality-checker.md
+    │   ├── skill-code-reviewer.md
+    │   ├── skill-tech-lead.md
+    │   └── skill-frontend-engine.md    ⏸️ Pendiente
+    ├── seo-marketing/
+    │   └── skill-seo-specialist.md
+    ├── uix/
+    │   ├── skill-ux-audit.md           ✅ Usado
+    │   ├── skill-ui-styling.md         ✅ Usado
+    │   └── skill-interaction-polish.md ✅ Usado
+    └── workflows/
+        └── workflow-pre-commit.md
 ```
 
 ---
