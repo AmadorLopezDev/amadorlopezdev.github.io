@@ -1,15 +1,14 @@
 # Comando: orchestrate-quality-flow
-**Tipo:** Pipeline de Calidad Automatizado
-
-## 🎯 Objetivo
-Ejecutar el ciclo completo de validación antes de realizar cualquier commit.
+**Tipo:** Pipeline de Calidad Total (Engineering + SEO)
 
 ## 🛠 Secuencia de Ejecución
-1. **Fase 1 (Limpieza):** Ejecutar `skill-quality-checker.md`. Si hay "Else" o niveles de indentación excesivos, detener.
-2. **Fase 2 (Integridad):** Ejecutar `astro check`. Si falla el tipado o la estructura de Astro, detener.
-3. **Fase 3 (Revisión Senior):** Ejecutar `skill-code-reviewer-frontend.md`.
-4. **Fase 4 (Autoridad):** Ejecutar `skill-tech-lead-validator.md`.
-5. **Fase 5 (Commit):** Si todo es OK, redactar commit en formato **Conventional Commits** (ej. `refactor(ui): apply object calisthenics to nav component`). En caso de no haber cambios, indicar "No changes to commit". Pero hay que cumplir el flujo con los cambios que existan con la rama principal del repositorio, analizando los commits que se han realizado desde la última integración.
+1. **Fase 1 (Calidad de Código):** Ejecutar `skill-quality-checker.md`.
+2. **Fase 2 (Validación Técnica):** Ejecutar `astro check`.
+3. **Fase 3 (Optimización SEO):** Ejecutar `skill-seo-specialist.md`. 
+   - *Claude generará los metadatos y revisará la jerarquía de encabezados del artículo.*
+4. **Fase 4 (Revisión Senior):** Ejecutar `skill-code-reviewer-frontend.md`.
+5. **Fase 5 (Aprobación Tech Lead):** Ejecutar `skill-tech-lead-validator.md`.
+6. **Fase 6 (Commit):** Redactar commit en formato Conventional Commits.
 
 ## 🚀 Instrucción para Claude Code
-"Claude, no permitas la finalización de ninguna tarea sin que este flujo se complete con éxito. Eres el guardián de la calidad de este portafolio."
+"Claude, el SEO es parte de nuestra definición de 'Hecho' (Definition of Done). No des por finalizado un artículo si no tiene metadatos optimizados y una estructura de encabezados correcta."
