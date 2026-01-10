@@ -27,7 +27,8 @@
       "Bash(lsof:*)",
       "Bash(curl:*)",
       "mcp__playwright__browser_close",
-      "mcp__playwright__browser_snapshot"
+      "mcp__playwright__browser_snapshot",
+      "Bash(timeout /t 5 /nobreak)"
     ]
   }
 }
