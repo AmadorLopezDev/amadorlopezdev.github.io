@@ -2,11 +2,10 @@
 title: "Mi Primera Entrada"
 description: "Una introducción al tema del blog."
 date: "2025-01-14"
-layout: ../../layouts/Layout.astro
+layout: ../../layouts/BlogPost.astro
 tags: ["Blog", "General"]
 image: "/img/blog/2025-02-18-first-post.png"
 ---
-# Mi Primera Entrada
 
 Voy a hacer esta primera entrada lo más reducida posible, porque no se trata de aburrir de primeras. Si has ido a la página Acerca de, vas a poder un poco un resumen muy escueto de mi perfil profesional, pero también habrás podido leer "Lo que te diga de mí hoy, posiblemente habrá cambiado algo mañana". Efectivamente, soy una persona que intenta no caducar (referencia a un viejo anuncio) y por lo tanto intento seguir avanzando en mi vida personal y profesional.
 

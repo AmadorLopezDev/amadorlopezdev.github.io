@@ -2,12 +2,10 @@
 title: "El poder oculto sale a la luz"
 description: "La IA viene, pero todos tenemos un poder oculto"
 date: "2025-02-21"
-layout: ../../layouts/Layout.astro
+layout: ../../layouts/BlogPost.astro
 tags: ["Programación", "IA", "Desarrollo"]
 image: "/img/blog/2025-02-21-poder-oculto.png"
 ---
-
-# Sacando el poder oculto de nuestro interior
 
 Naruto aprendió el Jutsu de los clones de sombra leyendo las palabras de un pergamino prohibido, eran como palabras mágicas, pues consiguieron que el futuro Hokage de la Villa Oculta de la Hoja pudiera dominar una técnica que parecía que jamás iba a poder hacer.
 

@@ -2,12 +2,10 @@
 title: "El camino del ninja dev: object calisthenics"
 description: "Un pequeño artículo sobre object calisthenics, reglas de POO que ayudan a obtener un código más limpio y mantenible"
 date: "2025-02-19"
-layout: ../../layouts/Layout.astro
+layout: ../../layouts/BlogPost.astro
 tags: ["POO", "Object Calisthenics", "Programación", "Clean Code"]
 image: "/img/blog/2025-02-19-object-calisthenics.webp"
 ---
-
-# Object Calisthenics
 
 En nuestro camino del "Ninja DEV 🥷" vamos a encontrar ciertos jutsus que nos van a venir genial para dejar nuestro código más "limpio" y "mantenible". Ya hablaremos un día sobre la importancia de volver a ver código escrito por ti y no sentir vergüenza ajena.
 
