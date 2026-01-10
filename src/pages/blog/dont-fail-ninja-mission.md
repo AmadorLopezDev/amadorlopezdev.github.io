@@ -2,12 +2,10 @@
 title: "No falles en tu misión de ninja de software"
 description: "Clean Code, SOLID, TDD, DDD ¿Cómo no fallar en nuestra misión?"
 date: "2025-03-04"
-layout: ../../layouts/Layout.astro
+layout: ../../layouts/BlogPost.astro
 tags: ["Programación", "Clean Code", "Desarrollo", "SOLID", "TDD", "DDD"]
 image: "/img/blog/2025-03-04-clean-code-ninja.png"
 ---
-
-# No falles en tu misión de ninja de software
 
 Las villas de ninjas se mantienen a base de cumplir correctamente las misiones, eso hace que cada vez les encarguen más misiones y puedan cobrar por esos servicios. A más cantidad y más dificultad, mejores ingresos se tendrán.
 

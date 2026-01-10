@@ -13,7 +13,13 @@
       "Bash(npm run dev:*)",
       "Bash(npx @anthropic-ai/claude-code mcp add:*)",
       "Bash(start http://localhost:4321)",
-      "mcp__playwright__browser_navigate"
+      "mcp__playwright__browser_navigate",
+      "Bash(claude --version)",
+      "Bash(npm show:*)",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_press_key",
+      "mcp__playwright__browser_evaluate"
     ]
   }
 }

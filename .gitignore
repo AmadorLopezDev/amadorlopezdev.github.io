@@ -21,3 +21,6 @@ pnpm-debug.log*
 .DS_Store
 githubamadorlopezdev
 githubamadorlopezdev.pub
+
+# Content
+.content/

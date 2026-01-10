@@ -3,31 +3,97 @@ import BlogCard from "../../components/BlogCard.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getSortedPosts, getPaginatedPosts } from "../../utils/posts";
 
-const POSTS_PER_PAGE = 2;
+const POSTS_PER_PAGE = 6;
 const currentPage = 1;
 
 const posts = getSortedPosts();
 const { paginatedPosts, totalPages } = getPaginatedPosts(posts, currentPage, POSTS_PER_PAGE);
 ---
-<Layout title="Blog">
-  <h1 class="text-2xl font-bold text-chalk mb-6">Blog</h1>
 
-  <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    {paginatedPosts.map((post: { title: string; description: string; date: string; url: string; tags: string[]; image: string }) => (
-      <BlogCard
-        title={post.title}
-        description={post.description}
-        date={post.date}
-        link={post.url}
-        tags={post.tags}
-        image={post.image}
-      />
-    ))}
-  </div>
+<Layout title="Blog - Amador López Parra">
+  <section class="
+    max-w-7xl mx-auto
+    px-6 md:px-12 lg:px-24
+    py-16
+  ">
 
-  <div class="text-center mt-8">
-    <button id="load-more-button" class="bg-blue-500 text-white px-4 py-2 rounded" data-total-pages={totalPages}>Cargar más</button>
-  </div>
+    <!-- Header -->
+    <div class="mb-12 space-y-4">
+      <h1 class="
+        text-4xl md:text-5xl font-bold
+        text-text-primary
+      ">
+        Blog
+      </h1>
+      <p class="
+        text-xl text-text-secondary
+        max-w-3xl
+      ">
+        Artículos sobre .NET, Clean Architecture, Domain-Driven Design y mejores prácticas de desarrollo de software.
+      </p>
+
+      <!-- Stats (opcional) -->
+      <div class="flex items-center gap-6 text-sm text-text-tertiary pt-4">
+        <span>{posts.length} {posts.length === 1 ? 'artículo' : 'artículos'}</span>
+      </div>
+    </div>
+
+    <!-- Grid de BlogCards -->
+    <div
+      id="blog-container"
+      class="
+        grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+        gap-6
+      "
+    >
+      {paginatedPosts.map((post: {
+        title: string;
+        description: string;
+        date: string;
+        url: string;
+        tags: string[];
+        image: string;
+      }) => (
+        <BlogCard
+          title={post.title}
+          description={post.description}
+          date={post.date}
+          link={post.url}
+          tags={post.tags}
+          image={post.image}
+        />
+      ))}
+    </div>
+
+    <!-- Load More Button -->
+    {totalPages > 1 && (
+      <div class="flex justify-center mt-12">
+        <button
+          id="load-more-button"
+          data-total-pages={totalPages}
+          class="
+            px-6 py-3
+            bg-bg-tertiary
+            text-text-primary
+            border border-border
+            rounded-lg
+            font-medium
+            transition-all duration-200 ease-in-out
+            hover:bg-bg-overlay
+            hover:border-border-emphasis
+            active:bg-bg-tertiary
+            focus:outline-none
+            focus:ring-2 focus:ring-primary-500
+            disabled:opacity-50
+            disabled:cursor-not-allowed
+          "
+        >
+          Cargar más artículos
+        </button>
+      </div>
+    )}
+
+  </section>
 
   <script src="/utils/loadMore.js" type="module"></script>
 </Layout>

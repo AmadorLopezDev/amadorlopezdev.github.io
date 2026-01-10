@@ -1,0 +1,346 @@
+---
+import Layout from './Layout.astro';
+import Badge from '../components/Badge.astro';
+import Button from '../components/Button.astro';
+import { getSortedPosts } from '../utils/posts';
+
+const { frontmatter } = Astro.props;
+const { title, description, date, tags, image } = frontmatter;
+
+// Formatear fecha
+const formatDate = (dateString: string) => {
+  const dateObj = new Date(dateString);
+  return dateObj.toLocaleDateString('es-ES', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+
+// Calcular tiempo de lectura (aproximado)
+const content = await Astro.slots.render('default');
+const wordsPerMinute = 200;
+const wordCount = content.split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / wordsPerMinute);
+
+// Obtener posts relacionados (mismo tag, excluyendo el actual)
+const allPosts = getSortedPosts();
+const relatedPosts = allPosts
+  .filter((post: any) =>
+    post.url !== Astro.url.pathname &&
+    post.tags?.some((tag: string) => tags?.includes(tag))
+  )
+  .slice(0, 3);
+---
+
+<Layout title={title}>
+  <article class="relative">
+
+    <!-- Imagen destacada (hero) -->
+    {image && (
+      <div class="
+        relative w-full h-[400px] md:h-[500px]
+        overflow-hidden
+        bg-bg-secondary
+      ">
+        <img
+          src={image}
+          alt={title}
+          class="w-full h-full object-cover"
+        />
+        <!-- Overlay gradient -->
+        <div class="
+          absolute inset-0
+          bg-gradient-to-t from-bg-primary via-bg-primary/60 to-transparent
+        "></div>
+
+        <!-- Título sobre la imagen -->
+        <div class="
+          absolute bottom-0 left-0 right-0
+          px-6 md:px-12 lg:px-24
+          pb-12
+        ">
+          <div class="max-w-4xl mx-auto">
+            <h1 class="
+              text-4xl md:text-5xl lg:text-6xl
+              font-bold
+              text-text-primary
+              leading-tight
+              mb-6
+            ">
+              {title}
+            </h1>
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- Metadata section -->
+    <div class="
+      border-b border-border
+      bg-bg-secondary/50
+    ">
+      <div class="
+        max-w-4xl mx-auto
+        px-6 md:px-12 lg:px-24
+        py-6
+      ">
+        <div class="flex flex-wrap items-center gap-4 text-sm text-text-tertiary">
+          <!-- Fecha -->
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+            </svg>
+            <time datetime={date}>
+              {formatDate(date)}
+            </time>
+          </div>
+
+          <span class="text-text-muted">•</span>
+
+          <!-- Tiempo de lectura -->
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+            </svg>
+            <span>{readingTime} min de lectura</span>
+          </div>
+
+          {tags && tags.length > 0 && (
+            <>
+              <span class="text-text-muted">•</span>
+              <span>{tags.length} {tags.length === 1 ? 'etiqueta' : 'etiquetas'}</span>
+            </>
+          )}
+        </div>
+
+        <!-- Tags -->
+        {tags && tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-4">
+            {tags.map((tag: string) => (
+              <Badge variant="category">{tag}</Badge>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Contenido del artículo -->
+    <div class="
+      max-w-4xl mx-auto
+      px-6 md:px-12 lg:px-24
+      py-12
+    ">
+      <!-- Prose styling para Markdown -->
+      <div class="prose prose-invert prose-lg max-w-none">
+        <slot />
+      </div>
+    </div>
+
+    <!-- Posts relacionados -->
+    {relatedPosts.length > 0 && (
+      <div class="
+        border-t border-border
+        bg-bg-secondary/30
+        py-16
+      ">
+        <div class="
+          max-w-7xl mx-auto
+          px-6 md:px-12 lg:px-24
+        ">
+          <h2 class="
+            text-3xl font-bold
+            text-text-primary
+            mb-8
+          ">
+            Artículos relacionados
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            {relatedPosts.map((post: any) => (
+              <a
+                href={post.url}
+                class="
+                  group
+                  bg-bg-secondary
+                  border border-border
+                  rounded-xl
+                  overflow-hidden
+                  transition-all duration-300
+                  hover:border-border-emphasis
+                  hover:shadow-lg
+                  hover:scale-[1.02]
+                "
+              >
+                {post.image && (
+                  <div class="relative overflow-hidden h-48">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      class="
+                        w-full h-full object-cover
+                        transition-transform duration-300
+                        group-hover:scale-110
+                      "
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div class="p-6">
+                  <h3 class="
+                    text-xl font-bold
+                    text-text-primary
+                    mb-2
+                    transition-colors duration-200
+                    group-hover:text-primary
+                  ">
+                    {post.title}
+                  </h3>
+                  <p class="text-text-tertiary text-sm">
+                    {formatDate(post.date)}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- CTA final -->
+    <div class="
+      border-t border-border
+      bg-bg-secondary/50
+      py-12
+    ">
+      <div class="
+        max-w-4xl mx-auto
+        px-6 md:px-12 lg:px-24
+        text-center
+        space-y-6
+      ">
+        <h2 class="text-2xl font-bold text-text-primary">
+          ¿Te ha gustado este artículo?
+        </h2>
+        <p class="text-lg text-text-secondary">
+          Sigue leyendo más artículos sobre desarrollo de software, arquitectura limpia y mejores prácticas.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <Button variant="primary" href="/content/blog">
+            Ver todos los artículos
+          </Button>
+          <Button variant="secondary" href="/content/acerca">
+            Conoce más sobre mí
+          </Button>
+        </div>
+      </div>
+    </div>
+
+  </article>
+</Layout>
+
+<style>
+  /* Estilos prose personalizados para Markdown */
+  .prose {
+    @apply text-text-secondary;
+  }
+
+  .prose :global(h1),
+  .prose :global(h2),
+  .prose :global(h3),
+  .prose :global(h4),
+  .prose :global(h5),
+  .prose :global(h6) {
+    @apply text-text-primary font-bold mt-8 mb-4;
+  }
+
+  .prose :global(h1) {
+    @apply text-4xl;
+  }
+
+  .prose :global(h2) {
+    @apply text-3xl border-b border-border pb-2;
+  }
+
+  .prose :global(h3) {
+    @apply text-2xl;
+  }
+
+  .prose :global(h4) {
+    @apply text-xl;
+  }
+
+  .prose :global(p) {
+    @apply mb-6 leading-relaxed;
+  }
+
+  .prose :global(a) {
+    @apply text-primary hover:text-primary-400 underline underline-offset-4 transition-colors;
+  }
+
+  .prose :global(strong) {
+    @apply text-text-primary font-semibold;
+  }
+
+  .prose :global(em) {
+    @apply text-text-secondary italic;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    @apply mb-6 ml-6 space-y-2;
+  }
+
+  .prose :global(ul) {
+    @apply list-disc;
+  }
+
+  .prose :global(ol) {
+    @apply list-decimal;
+  }
+
+  .prose :global(li) {
+    @apply text-text-secondary;
+  }
+
+  .prose :global(blockquote) {
+    @apply border-l-4 border-primary pl-6 py-2 my-6 italic text-text-tertiary bg-bg-tertiary/30 rounded-r;
+  }
+
+  .prose :global(code) {
+    @apply bg-bg-tertiary px-2 py-1 rounded text-sm font-mono text-accent;
+  }
+
+  .prose :global(pre) {
+    @apply bg-bg-tertiary p-4 rounded-lg overflow-x-auto my-6 border border-border;
+  }
+
+  .prose :global(pre code) {
+    @apply bg-transparent p-0 text-text-secondary;
+  }
+
+  .prose :global(img) {
+    @apply rounded-lg my-8 shadow-lg;
+  }
+
+  .prose :global(hr) {
+    @apply border-border my-8;
+  }
+
+  .prose :global(table) {
+    @apply w-full border-collapse my-6;
+  }
+
+  .prose :global(th),
+  .prose :global(td) {
+    @apply border border-border px-4 py-2;
+  }
+
+  .prose :global(th) {
+    @apply bg-bg-tertiary text-text-primary font-semibold;
+  }
+
+  .prose :global(td) {
+    @apply bg-bg-secondary/30;
+  }
+</style>

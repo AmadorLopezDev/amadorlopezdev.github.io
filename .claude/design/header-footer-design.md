@@ -1,0 +1,496 @@
+# 🧭 Header & Footer - Diseño Completo
+
+**Objetivo:** Navegación clara + Conversión (acceso a CV/Redes) + Identidad profesional.
+
+---
+
+## 📐 HEADER DESIGN
+
+### Layout Structure
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  [Logo/Nombre]           [Nav Links]         [Socials] [CTA]    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Código HTML + Tailwind
+
+```html
+<header class="
+  sticky top-0 z-50
+  bg-bg-primary/80 backdrop-blur-md
+  border-b border-border
+  transition-all duration-300
+">
+  <nav class="
+    max-w-7xl mx-auto
+    px-6 md:px-12 lg:px-24
+    py-4
+    flex items-center justify-between
+  ">
+
+    <!-- Logo / Nombre -->
+    <a href="/" class="
+      flex items-center gap-3
+      text-text-primary hover:text-primary
+      transition-colors duration-200
+      group
+    ">
+      <!-- Opcional: Logo SVG o Inicial -->
+      <div class="
+        w-10 h-10
+        bg-gradient-to-br from-primary-500 to-accent-500
+        rounded-lg
+        flex items-center justify-center
+        font-bold text-lg text-white
+        group-hover:scale-110
+        transition-transform duration-200
+      ">
+        AL
+      </div>
+
+      <!-- Nombre -->
+      <span class="
+        text-xl font-bold
+        hidden sm:block
+      ">
+        Amador López
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <ul class="
+      hidden md:flex
+      items-center
+      gap-8
+    ">
+      <li>
+        <a href="/" class="
+          text-base font-medium
+          text-text-secondary hover:text-text-primary
+          transition-colors duration-200
+          relative
+          after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary-500
+          hover:after:w-full after:transition-all after:duration-300
+        ">
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a href="/content/acerca" class="
+          text-base font-medium
+          text-text-secondary hover:text-text-primary
+          transition-colors duration-200
+          relative
+          after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary-500
+          hover:after:w-full after:transition-all after:duration-300
+        ">
+          Acerca de
+        </a>
+      </li>
+      <li>
+        <a href="/content/blog" class="
+          text-base font-medium
+          text-text-secondary hover:text-text-primary
+          transition-colors duration-200
+          relative
+          after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary-500
+          hover:after:w-full after:transition-all after:duration-300
+        ">
+          Blog
+        </a>
+      </li>
+      <li>
+        <a href="/proyectos" class="
+          text-base font-medium
+          text-text-secondary hover:text-text-primary
+          transition-colors duration-200
+          relative
+          after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary-500
+          hover:after:w-full after:transition-all after:duration-300
+        ">
+          Proyectos
+        </a>
+      </li>
+    </ul>
+
+    <!-- Social Icons + CTA -->
+    <div class="
+      hidden md:flex
+      items-center
+      gap-3
+    ">
+      <!-- LinkedIn -->
+      <a
+        href="https://www.linkedin.com/in/tu-perfil"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="
+          w-10 h-10
+          flex items-center justify-center
+          text-text-tertiary hover:text-primary
+          bg-bg-tertiary hover:bg-primary/10
+          rounded-lg
+          transition-all duration-200
+          hover:transform hover:scale-110
+        "
+        aria-label="LinkedIn"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+
+      <!-- GitHub -->
+      <a
+        href="https://github.com/tu-usuario"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="
+          w-10 h-10
+          flex items-center justify-center
+          text-text-tertiary hover:text-primary
+          bg-bg-tertiary hover:bg-primary/10
+          rounded-lg
+          transition-all duration-200
+          hover:transform hover:scale-110
+        "
+        aria-label="GitHub"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+
+      <!-- RSS -->
+      <a
+        href="/rss.xml"
+        target="_blank"
+        class="
+          w-10 h-10
+          flex items-center justify-center
+          text-text-tertiary hover:text-emphasis
+          bg-bg-tertiary hover:bg-emphasis/10
+          rounded-lg
+          transition-all duration-200
+          hover:transform hover:scale-110
+        "
+        aria-label="RSS Feed"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/>
+        </svg>
+      </a>
+
+      <!-- Divider -->
+      <div class="w-px h-6 bg-border"></div>
+
+      <!-- CTA Descargar CV -->
+      <a
+        href="/cv/amador-lopez-cv.pdf"
+        download
+        class="
+          inline-flex items-center gap-2
+          px-4 py-2
+          bg-primary-500 hover:bg-primary-400
+          text-text-primary font-semibold text-sm
+          rounded-lg
+          transition-all duration-200
+          shadow-md shadow-primary-500/20 hover:shadow-lg hover:shadow-primary-400/30
+          transform hover:scale-105
+        "
+      >
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10 3a1 1 0 00-1 1v8.586l-2.293-2.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L11 12.586V4a1 1 0 00-1-1z"/>
+          <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
+        </svg>
+        CV
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-button"
+      class="
+        md:hidden
+        w-10 h-10
+        flex items-center justify-center
+        text-text-primary
+        bg-bg-tertiary hover:bg-bg-overlay
+        rounded-lg
+        transition-colors duration-200
+      "
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+      </svg>
+    </button>
+
+  </nav>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div
+    id="mobile-menu"
+    class="
+      md:hidden
+      hidden
+      bg-bg-secondary
+      border-t border-border
+      px-6 py-4
+    "
+  >
+    <ul class="space-y-4 mb-6">
+      <li>
+        <a href="/" class="block text-base font-medium text-text-secondary hover:text-text-primary transition-colors">
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a href="/content/acerca" class="block text-base font-medium text-text-secondary hover:text-text-primary transition-colors">
+          Acerca de
+        </a>
+      </li>
+      <li>
+        <a href="/content/blog" class="block text-base font-medium text-text-secondary hover:text-text-primary transition-colors">
+          Blog
+        </a>
+      </li>
+      <li>
+        <a href="/proyectos" class="block text-base font-medium text-text-secondary hover:text-text-primary transition-colors">
+          Proyectos
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile Socials -->
+    <div class="flex items-center gap-3 mb-4">
+      <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" class="w-10 h-10 flex items-center justify-center text-text-tertiary hover:text-primary bg-bg-tertiary rounded-lg transition-all" aria-label="LinkedIn">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://github.com/tu-usuario" target="_blank" class="w-10 h-10 flex items-center justify-center text-text-tertiary hover:text-primary bg-bg-tertiary rounded-lg transition-all" aria-label="GitHub">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+      </a>
+      <a href="/rss.xml" target="_blank" class="w-10 h-10 flex items-center justify-center text-text-tertiary hover:text-emphasis bg-bg-tertiary rounded-lg transition-all" aria-label="RSS">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/></svg>
+      </a>
+    </div>
+
+    <!-- Mobile CTA -->
+    <a href="/cv/amador-lopez-cv.pdf" download class="block w-full px-4 py-3 bg-primary-500 hover:bg-primary-400 text-text-primary font-semibold text-center rounded-lg transition-all">
+      Descargar CV
+    </a>
+  </div>
+
+</header>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('mobile-menu-button')?.addEventListener('click', () => {
+    const menu = document.getElementById('mobile-menu');
+    const button = document.getElementById('mobile-menu-button');
+    const isExpanded = button?.getAttribute('aria-expanded') === 'true';
+
+    menu?.classList.toggle('hidden');
+    button?.setAttribute('aria-expanded', String(!isExpanded));
+  });
+</script>
+```
+
+---
+
+## 📐 FOOTER DESIGN
+
+### Layout Structure
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                   │
+│  [Nombre + Tagline]                                              │
+│                                                                   │
+│  [Navegación rápida]  [Enlaces legales]  [Redes sociales]       │
+│                                                                   │
+│  ────────────────────────────────────────────────────────────    │
+│                                                                   │
+│  © 2025 Amador López · Made with Astro                           │
+│                                                                   │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Código HTML + Tailwind
+
+```html
+<footer class="
+  bg-bg-secondary
+  border-t border-border
+  mt-auto
+">
+  <!-- Main Footer Content -->
+  <div class="
+    max-w-7xl mx-auto
+    px-6 md:px-12 lg:px-24
+    py-12
+  ">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+
+      <!-- Column 1: Brand + Tagline -->
+      <div class="md:col-span-2">
+        <h3 class="text-xl font-bold text-text-primary mb-2">
+          Amador López Parra
+        </h3>
+        <p class="text-sm text-text-tertiary leading-relaxed mb-4">
+          Senior Software Engineer especializado en .NET, C# y arquitecturas limpias.
+          Construyendo software de calidad desde 1998.
+        </p>
+        <!-- Email (opcional) -->
+        <a href="mailto:contacto@amadorlopez.dev" class="
+          inline-flex items-center gap-2
+          text-sm text-text-secondary hover:text-primary
+          transition-colors duration-200
+        ">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+          </svg>
+          contacto@amadorlopez.dev
+        </a>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h4 class="text-sm font-semibold text-text-primary uppercase tracking-wider mb-4">
+          Navegación
+        </h4>
+        <ul class="space-y-2">
+          <li>
+            <a href="/" class="text-sm text-text-tertiary hover:text-primary transition-colors">
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="/content/acerca" class="text-sm text-text-tertiary hover:text-primary transition-colors">
+              Acerca de
+            </a>
+          </li>
+          <li>
+            <a href="/content/blog" class="text-sm text-text-tertiary hover:text-primary transition-colors">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="/proyectos" class="text-sm text-text-tertiary hover:text-primary transition-colors">
+              Proyectos
+            </a>
+          </li>
+          <li>
+            <a href="/rss.xml" class="text-sm text-text-tertiary hover:text-primary transition-colors">
+              RSS Feed
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Legal -->
+      <div>
+        <h4 class="text-sm font-semibold text-text-primary uppercase tracking-wider mb-4">
+          Legal
+        </h4>
+        <ul class="space-y-2">
+          <li>
+            <a href="/legal/aviso-legal" class="text-sm text-text-tertiary hover:text-primary transition-colors">
+              Aviso Legal
+            </a>
+          </li>
+          <li>
+            <a href="/legal/politica-de-privacidad" class="text-sm text-text-tertiary hover:text-primary transition-colors">
+              Política de Privacidad
+            </a>
+          </li>
+          <li>
+            <a href="/legal/politica-de-cookies" class="text-sm text-text-tertiary hover:text-primary transition-colors">
+              Política de Cookies
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-border mb-8"></div>
+
+    <!-- Bottom Bar -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+
+      <!-- Copyright -->
+      <p class="text-sm text-text-tertiary">
+        © 2025 Amador López Parra. Todos los derechos reservados.
+      </p>
+
+      <!-- Tech Stack Badge -->
+      <p class="text-xs text-text-muted flex items-center gap-2">
+        Hecho con
+        <a href="https://astro.build" target="_blank" class="text-primary hover:text-primary-400 transition-colors font-medium">
+          Astro
+        </a>
+        +
+        <span class="text-primary font-medium">Tailwind CSS</span>
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex items-center gap-3">
+        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-primary transition-colors" aria-label="LinkedIn">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-primary transition-colors" aria-label="GitHub">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+        </a>
+        <a href="/rss.xml" target="_blank" class="text-text-muted hover:text-emphasis transition-colors" aria-label="RSS">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+```
+
+---
+
+## 📱 Responsive Behavior
+
+### Mobile (<768px)
+- **Header:** Menu hamburguesa, logo visible, CTA en dropdown
+- **Footer:** Grid de 1 columna, stack vertical
+
+### Desktop (>768px)
+- **Header:** Navegación horizontal, iconos + CTA visibles
+- **Footer:** Grid de 4 columnas
+
+---
+
+## ✅ Checklist de Implementación
+
+### Header
+- [ ] Reemplazar `src/components/Header.astro`
+- [ ] Añadir script de mobile menu
+- [ ] Actualizar enlaces de LinkedIn/GitHub
+- [ ] Crear página `/proyectos`
+- [ ] Testear sticky header en scroll
+- [ ] Validar accesibilidad (aria-labels)
+
+### Footer
+- [ ] Reemplazar `src/components/Footer.astro`
+- [ ] Actualizar email de contacto
+- [ ] Validar todos los enlaces
+- [ ] Testear responsive
+
+---
+
+**Siguiente paso:** Crear especificaciones de espaciado y layout global.

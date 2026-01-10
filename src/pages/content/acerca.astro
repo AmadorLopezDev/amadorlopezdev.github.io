@@ -1,0 +1,434 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Badge from '../../components/Badge.astro';
+import Button from '../../components/Button.astro';
+---
+
+<Layout title="Acerca de - Amador López Parra">
+
+  <!-- Hero Section -->
+  <section class="
+    relative
+    bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary
+    border-b border-border
+  ">
+    <div class="
+      max-w-5xl mx-auto
+      px-6 md:px-12 lg:px-24
+      py-16 md:py-24
+    ">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+
+        <!-- Imagen de perfil (placeholder - añadir cuando tengas la imagen) -->
+        <div class="
+          flex-shrink-0
+          w-48 h-48 md:w-64 md:h-64
+          rounded-full
+          bg-gradient-to-br from-primary-500 to-accent-500
+          p-1
+          animate-fade-in
+        ">
+          <div class="
+            w-full h-full
+            rounded-full
+            bg-bg-secondary
+            flex items-center justify-center
+            text-6xl md:text-8xl font-bold
+            text-text-primary
+          ">
+            AL
+          </div>
+        </div>
+
+        <!-- Bio corta -->
+        <div class="flex-1 space-y-6 text-center md:text-left">
+          <h1 class="
+            text-4xl md:text-5xl font-bold
+            text-text-primary
+            animate-fade-in-up
+          ">
+            Acerca de mí
+          </h1>
+          <p class="
+            text-xl text-text-secondary
+            leading-relaxed
+            animate-fade-in-up animation-delay-200
+          ">
+            Senior Software Engineer con más de 25 años de experiencia construyendo soluciones de software de calidad.
+          </p>
+          <div class="
+            flex flex-wrap gap-3 justify-center md:justify-start
+            animate-fade-in-up animation-delay-300
+          ">
+            <Badge variant="tech" tech="dotnet">.NET 10</Badge>
+            <Badge variant="tech" tech="azure">Azure</Badge>
+            <Badge variant="tech" tech="typescript">TypeScript</Badge>
+            <Badge variant="status">Disponible</Badge>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <article class="
+    max-w-4xl mx-auto
+    px-6 md:px-12 lg:px-24
+    py-16
+  ">
+
+    <!-- Información -->
+    <section class="mb-16 space-y-6 reveal">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="text-4xl">🙋</div>
+        <h2 class="text-3xl font-bold text-text-primary">Información</h2>
+      </div>
+
+      <div class="prose prose-invert max-w-none space-y-6">
+        <p class="text-lg text-text-secondary leading-relaxed">
+          Trabajo desarrollando software desde hace mucho tiempo, posiblemente más del que me gustaría recordar 😉. Sin embargo, da lo mismo cuánto tiempo pase en este mundo, me encanta porque no ha dejado de apasionarme ni un ápice desde que entré por casualidad en 1998.
+        </p>
+
+        <p class="text-lg text-text-secondary leading-relaxed">
+          Lo que te diga de mí hoy, posiblemente habrá cambiado algo mañana. Soy una persona que evoluciona, se sigue desarrollando y además me gusta salir de la zona de confort, retarme constantemente para poder avanzar cada vez más. Aunque tengo que reconocer, que con el paso de los años lo hago desde la serenidad. Los cambios los asimilo con determinación y templanza, pues la experiencia te da perspectiva para entender mejor que la vida es cambio.
+        </p>
+
+        <p class="text-lg text-text-secondary leading-relaxed">
+          A continuación, podrás leer algunas de las aptitudes y actitudes que he podido desarrollar a lo largo de estos años de trabajo y constante evolución. No es fácil poder reducir en poco espacio lo que tiene relación conmigo a nivel personal, pero sí voy a intentar dar unas pinceladas de lo que puedes esperar de mí si me tuvieras al lado trabajando contigo y pudieramos compartir los retos diarios.
+        </p>
+      </div>
+    </section>
+
+    <hr class="border-border my-12" />
+
+    <!-- Soft Skills -->
+    <section class="mb-16 space-y-8 reveal">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="text-4xl">🌟</div>
+        <h2 class="text-3xl font-bold text-text-primary">Soft Skills</h2>
+      </div>
+
+      <div class="grid gap-8">
+        <!-- Skill Card: Trabajo en equipo -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+          transition-all duration-300
+          hover:border-border-emphasis
+          hover:shadow-lg
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-3 flex items-center gap-3">
+            <span class="text-2xl">🤝</span>
+            Trabajo en equipo
+          </h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Llevo trabajando en equipo desde que empecé en este mundo del desarrollo de software, por lo que he desarrollado mi capacidad para colaborar con las personas.
+          </p>
+          <p class="text-text-tertiary leading-relaxed">
+            Desde un equipo pequeño formado por profesionales del mismo ámbito, como en equipos más grandes con profesionales de diferentes ámbitos y también con personas externas al equipo para conseguir una mejor integración y consolidación del proyecto.
+          </p>
+        </div>
+
+        <!-- Skill Card: Adaptabilidad -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+          transition-all duration-300
+          hover:border-border-emphasis
+          hover:shadow-lg
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-3 flex items-center gap-3">
+            <span class="text-2xl">🌀</span>
+            Adaptabilidad
+          </h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Tal y como la vida es cambio y nos tenemos que adaptar, en el desarrollo de software las tecnologías cambian y hay que adaptarse para asimilarlas y aprovechar lo mejor en cada momento.
+          </p>
+          <p class="text-text-tertiary leading-relaxed">
+            Esto también requiere aprendizaje, lenguajes de programación, motores de bases de datos, procesos de integración, arquitecturas y patrones de software, así como metodologías.
+          </p>
+        </div>
+
+        <!-- Skill Card: Comunicación -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+          transition-all duration-300
+          hover:border-border-emphasis
+          hover:shadow-lg
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-3 flex items-center gap-3">
+            <span class="text-2xl">💬</span>
+            Comunicación efectiva
+          </h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Interacción con stakeholders y equipos técnicos, facilitando la colaboración en el diseño de arquitecturas y soluciones de software.
+          </p>
+          <p class="text-text-tertiary leading-relaxed">
+            El lenguaje ubicuo ayuda mucho a establecer puentes entre las diferentes partes afectadas por un desarrollo. Por otro lado, no menospreciemos el poder de escuchar y pensar antes de hablar.
+          </p>
+        </div>
+
+        <!-- Skill Card: Resolución de problemas -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+          transition-all duration-300
+          hover:border-border-emphasis
+          hover:shadow-lg
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-3 flex items-center gap-3">
+            <span class="text-2xl">🧠</span>
+            Resolución de problemas
+          </h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            No hay formulas mágicas, ni podemos aplicar un mismo patrón para todas las situaciones, por lo que hay que analizar el contexto y lo que se requiere.
+          </p>
+          <p class="text-text-tertiary leading-relaxed">
+            Sin embargo, hay practicas como desarrollar usando <strong class="text-primary">TDD</strong>, comprender el negocio aplicando <strong class="text-primary">DDD</strong> y codificar siempre pensando en <strong class="text-primary">SOLID</strong> y en <strong class="text-primary">CÓDIGO LIMPIO</strong> que nos van a ayudar en todo momento.
+          </p>
+        </div>
+
+        <!-- Skill Card: Liderazgo -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+          transition-all duration-300
+          hover:border-border-emphasis
+          hover:shadow-lg
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-3 flex items-center gap-3">
+            <span class="text-2xl">👨‍💼</span>
+            Liderazgo
+          </h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Liderar no es mandar ni repartir funciones o tareas, liderar es servir de apoyo a quienes lo necesitan, es saber enfocar las situaciones a las personas para que las entiendan y aunen esfuerzos para solventarlas.
+          </p>
+          <p class="text-text-tertiary leading-relaxed">
+            El tiempo, las relaciones con diferentes cargos en una empresa y la comprensión del contexto han ayudado a poder ejercer de líder cuando se ha requerido.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-border my-12" />
+
+    <!-- Hard Skills -->
+    <section class="mb-16 space-y-8 reveal">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="text-4xl">🔧</div>
+        <h2 class="text-3xl font-bold text-text-primary">Hard Skills</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Lenguajes -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-3">
+            <span class="text-2xl">🖥️</span>
+            Lenguajes de Programación
+          </h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">C#</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              TypeScript
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              Python
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              Delphi
+            </li>
+          </ul>
+        </div>
+
+        <!-- Bases de datos -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-3">
+            <span class="text-2xl">💾</span>
+            Bases de Datos
+          </h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">SQL Server</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              PostgreSQL
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              Firebird
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              Oracle
+            </li>
+          </ul>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-3">
+            <span class="text-2xl">🌍</span>
+            Frameworks
+          </h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">.NET</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              NestJS
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              Flask
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              GraphQL
+            </li>
+          </ul>
+        </div>
+
+        <!-- Principios -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-3">
+            <span class="text-2xl">⚙️</span>
+            Principios y Metodologías
+          </h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">SOLID</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">Clean Code</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">TDD</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">DDD</strong>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Plataformas -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-3">
+            <span class="text-2xl">🌬️</span>
+            Plataformas Cloud
+          </h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">Azure Cloud</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">Azure DevOps</strong>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Metodologías -->
+        <div class="
+          bg-bg-secondary
+          border border-border
+          rounded-xl
+          p-6
+        ">
+          <h3 class="text-xl font-bold text-text-primary mb-4 flex items-center gap-3">
+            <span class="text-2xl">🤼</span>
+            Metodología Ágil
+          </h3>
+          <ul class="space-y-2 text-text-secondary">
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              <strong class="text-primary">Scrum</strong>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">▸</span>
+              Extreme Programming (XP)
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="
+      mt-16 pt-12
+      border-t border-border
+      text-center
+      space-y-6
+      reveal
+    ">
+      <h2 class="text-2xl font-bold text-text-primary">
+        ¿Quieres trabajar conmigo?
+      </h2>
+      <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+        Estoy abierto a nuevos proyectos y colaboraciones. No dudes en contactarme.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <Button variant="primary" href="/#contact">
+          Contactar
+        </Button>
+        <Button variant="secondary" href="/content/blog">
+          Leer el blog
+        </Button>
+      </div>
+    </section>
+
+  </article>
+
+</Layout>

@@ -1,18 +1,184 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Badge from '../components/Badge.astro';
 ---
 
-<Layout title="Inicio">
-  <h1 class="inline-block w-full overflow-hidden border-r-2 border-chalk fade-in">¡Bienvenido a mi pequeño espacio!</h1>
-  <p>A&uacute;n no tengo muy claro que vas a poder encontrar aqu&iacute;, pero ten por seguro que siempre ser&aacute; contenido creado con la mejor de las intenciones.</p>
+<Layout title="Inicio - Amador López Parra">
+  <section class="
+    relative
+    min-h-screen
+    flex items-center justify-center
+    bg-gradient-to-b from-bg-primary via-bg-primary to-bg-secondary
+    px-6 md:px-12 lg:px-24
+    py-20
+  ">
+    <!-- Contenedor principal -->
+    <div class="relative z-10 max-w-5xl mx-auto text-center">
 
-  <img src="/img/index/index.png" alt="Imagen principal" class="my-4 mx-auto rounded-lg shadow-lg">
+      <!-- Badge de estado -->
+      <div class="flex justify-center mb-8 animate-fade-in">
+        <span class="
+          inline-flex items-center gap-2
+          px-4 py-2
+          bg-success/10
+          text-success
+          text-sm font-medium
+          rounded-full
+          border border-success/20
+          backdrop-blur-sm
+        ">
+          <span class="w-2 h-2 bg-success rounded-full animate-pulse"></span>
+          Diferentes aptitudes con la mejor actitud posible.
+        </span>
+      </div>
 
-  <h2>Secciones principales:</h2>
-  <ul class="list-disc pl-5">
-    <li><a href="./content/acerca" class="text-blue-500 hover:text-blue-700 underline">Acerca de mí</a>: Conoce más sobre mi experiencia y proyectos.</li>
-    <li><a href="./content/blog" class="text-blue-500 hover:text-blue-700 underline">Blog</a>: Lee artículos y tutoriales didácticos.</li>
-  </ul>
+      <!-- Saludo + Nombre -->
+      <p class="
+        text-lg md:text-xl
+        text-text-tertiary
+        font-medium
+        mb-4
+        animate-fade-in-up
+        animation-delay-100
+      ">
+        Hola, soy Amador López
+      </p>
 
-  <p>¡Espero que disfrutes tu visita! 🌟</p>
+      <!-- Headline Principal -->
+      <h1 class="
+        text-4xl sm:text-5xl md:text-6xl lg:text-7xl
+        font-extrabold
+        tracking-tight
+        leading-none
+        text-text-primary
+        mb-6
+        animate-fade-in-up
+        animation-delay-200
+      ">
+        Senior Software
+        <span class="
+          block
+          bg-gradient-to-r from-primary-400 via-primary-500 to-accent-500
+          bg-clip-text text-transparent
+        ">
+          Engineer
+        </span>
+      </h1>
+
+      <!-- Subheadline - Stack -->
+      <p class="
+        text-xl md:text-2xl
+        text-text-secondary
+        font-medium
+        leading-relaxed
+        mb-6
+        animate-fade-in-up
+        animation-delay-300
+      ">
+        Especializado en
+        <span class="text-tech-dotnet font-semibold">.NET</span> |
+        <span class="text-tech-dotnet font-semibold">C#</span> |
+        <span class="text-primary font-semibold">Clean Architecture</span>
+        <br class="hidden md:block">
+        <span class="text-primary font-semibold">Domain-Driven Design</span> |
+        <span class="text-tech-azure font-semibold">Azure Cloud</span>
+      </p>
+
+      <!-- Descripción corta -->
+      <p class="
+        max-w-2xl mx-auto
+        text-base md:text-lg
+        text-text-tertiary
+        leading-relaxed
+        mb-10
+        animate-fade-in-up
+        animation-delay-400
+      ">
+        Más de 25 años construyendo software de calidad, liderando equipos
+        y aplicando principios de Craftsmanship para resolver problemas complejos
+        con soluciones elegantes y mantenibles.
+      </p>
+
+      <!-- CTAs -->
+      <div class="
+        flex flex-col sm:flex-row
+        items-center justify-center
+        gap-4
+        mb-12
+        animate-fade-in-up
+        animation-delay-500
+      ">
+        <!-- Primary CTA -->
+        <Button variant="primary" href="#contact">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+          </svg>
+          Contactar
+        </Button>
+
+        <!-- Secondary CTA -->
+        <Button variant="secondary" href="/content/acerca">
+          Sobre mí
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </Button>
+      </div>
+
+      <!-- Stack Visual - Iconos/Badges -->
+      <div class="
+        flex flex-wrap
+        items-center justify-center
+        gap-3
+        animate-fade-in-up
+        animation-delay-600
+      ">
+        <Badge tech="dotnet">.NET 10</Badge>
+        <Badge tech="dotnet">C# 14</Badge>
+        <Badge tech="azure">Azure</Badge>
+        <Badge variant="category">DDD</Badge>
+        <Badge variant="category">SOLID</Badge>
+        <Badge variant="category">TDD</Badge>
+        <Badge tech="typescript">TypeScript</Badge>
+      </div>
+
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="
+      absolute bottom-8 left-1/2 transform -translate-x-1/2
+      animate-bounce
+    ">
+      <a href="#about" class="
+        flex flex-col items-center
+        text-text-tertiary hover:text-primary
+        transition-colors duration-200
+      ">
+        <span class="text-sm font-medium mb-2">Descubre más</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- Sección About (placeholder) -->
+  <section id="about" class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-16">
+    <h2 class="text-3xl font-bold text-text-primary mb-8">Sobre mí</h2>
+    <p class="text-lg text-text-secondary leading-relaxed mb-4">
+      Desarrollador de software desde 1998, especializado en arquitecturas limpias y
+      desarrollo orientado al dominio. Apasionado por crear software mantenible y escalable.
+    </p>
+    <div class="flex gap-4 mt-6">
+      <Button variant="secondary" href="/content/acerca">
+        Ver perfil completo
+      </Button>
+      <Button variant="secondary" href="/content/blog">
+        Leer el blog
+      </Button>
+    </div>
+  </section>
 </Layout>
