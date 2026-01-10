@@ -1,15 +1,23 @@
 ---
+import type { Post } from '../types/Post';
 import Layout from './Layout.astro';
 import Badge from '../components/Badge.astro';
 import Button from '../components/Button.astro';
 import { getSortedPosts } from '../utils/posts';
 
-const { frontmatter } = Astro.props;
-const { title, description, date, tags, image } = frontmatter;
+const WORDS_PER_MINUTE = 200;
+const MAX_RELATED_POSTS = 3;
 
-// Formatear fecha
-const formatDate = (dateString: string) => {
+const { frontmatter } = Astro.props;
+const { title, date, tags, image } = frontmatter;
+
+const formatDate = (dateString: string): string => {
   const dateObj = new Date(dateString);
+
+  if (isNaN(dateObj.getTime())) {
+    return dateString;
+  }
+
   return dateObj.toLocaleDateString('es-ES', {
     year: 'numeric',
     month: 'long',
@@ -17,20 +25,17 @@ const formatDate = (dateString: string) => {
   });
 };
 
-// Calcular tiempo de lectura (aproximado)
 const content = await Astro.slots.render('default');
-const wordsPerMinute = 200;
 const wordCount = content.split(/\s+/).length;
-const readingTime = Math.ceil(wordCount / wordsPerMinute);
+const readingTime = Math.ceil(wordCount / WORDS_PER_MINUTE);
 
-// Obtener posts relacionados (mismo tag, excluyendo el actual)
 const allPosts = getSortedPosts();
-const relatedPosts = allPosts
-  .filter((post: any) =>
+const relatedPosts: Post[] = allPosts
+  .filter((post: Post) =>
     post.url !== Astro.url.pathname &&
     post.tags?.some((tag: string) => tags?.includes(tag))
   )
-  .slice(0, 3);
+  .slice(0, MAX_RELATED_POSTS);
 ---
 
 <Layout title={title}>
@@ -157,7 +162,7 @@ const relatedPosts = allPosts
           </h2>
 
           <div class="grid md:grid-cols-3 gap-6">
-            {relatedPosts.map((post: any) => (
+            {relatedPosts.map((post: Post) => (
               <a
                 href={post.url}
                 class="

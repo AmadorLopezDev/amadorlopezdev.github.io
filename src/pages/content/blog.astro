@@ -1,4 +1,5 @@
 ---
+import type { Post } from "../../types/Post";
 import BlogCard from "../../components/BlogCard.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getSortedPosts, getPaginatedPosts } from "../../utils/posts";
@@ -46,14 +47,7 @@ const { paginatedPosts, totalPages } = getPaginatedPosts(posts, currentPage, POS
         gap-6
       "
     >
-      {paginatedPosts.map((post: {
-        title: string;
-        description: string;
-        date: string;
-        url: string;
-        tags: string[];
-        image: string;
-      }) => (
+      {paginatedPosts.map((post: Post) => (
         <BlogCard
           title={post.title}
           description={post.description}
