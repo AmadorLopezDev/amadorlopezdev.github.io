@@ -22,7 +22,12 @@
       "mcp__playwright__browser_evaluate",
       "Bash(start:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(tree:*)",
+      "Bash(lsof:*)",
+      "Bash(curl:*)",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_snapshot"
     ]
   }
 }
