@@ -5,6 +5,7 @@ date: "2025-01-11"
 layout: ../../layouts/BlogPost.astro
 tags: ["C#", "Clean Code", "Naming", "Best Practices", ".NET"]
 image: "/img/blog/2025-01-11-el-arte-de-nombrar.webp"
+imageAlt: "Código C# mostrando la diferencia entre nombres redundantes (ProductName, ProductPrice) y nombres limpios (Name, Price) con IntelliSense"
 ---
 
 En el mundo del desarrollo de software, hay un jutsu fundamental que todo ninja dev debe dominar: **el arte de nombrar**. No se trata solo de poner nombres técnicamente correctos, sino de crear código que se lea como una historia bien escrita, donde cada nombre comunica su propósito sin necesidad de explicaciones adicionales.
@@ -83,7 +84,7 @@ public sealed class Product(
 
 ### ¿Qué cambió y por qué?
 
-#### 1. **Primary Constructors** (C# 12+)
+### 1. **Primary Constructors** (C# 12+)
 ```csharp
 public sealed class Product(int id, string name, ...)
 ```
@@ -91,7 +92,7 @@ public sealed class Product(int id, string name, ...)
 - Reduce boilerplate sin sacrificar claridad.
 - Los parámetros se usan directamente en las inicializaciones.
 
-#### 2. **Nombres limpios sin prefijos**
+### 2. **Nombres limpios sin prefijos**
 ```csharp
 // ❌ Antes
 public int ProductId { get; set; }
@@ -107,7 +108,7 @@ public string Name { get; init; }
 - IntelliSense ahora muestra `product.Name` directamente.
 - La lectura del código se vuelve fluida: `var name = product.Name;`
 
-#### 3. **Encapsulación mediante `init` y `private set`**
+### 3. **Encapsulación mediante `init` y `private set`**
 ```csharp
 public Money Price { get; private set; } = price;
 public bool IsActive { get; private set; } = true;
@@ -118,7 +119,7 @@ public bool IsActive { get; private set; } = true;
 - `private set` protege el estado interno, exponiendo solo métodos de comportamiento (`UpdatePrice`, `Deactivate`).
 - Aplicamos **Tell, Don't Ask**: le decimos al objeto qué hacer, no le preguntamos por su estado para modificarlo externamente.
 
-#### 4. **Value Objects para primitivos**
+### 4. **Value Objects para primitivos**
 ```csharp
 public Money Price { get; private set; }
 public Category Category { get; init; }
@@ -303,6 +304,11 @@ El camino del Clean Code es largo, pero cada paso cuenta. Como diría Jiraiya: *
 
 ---
 
-**¿Quieres profundizar más?** En el próximo artículo hablaremos sobre **Métodos Narrativos y la Regla de la Única Responsabilidad (SRP)**, donde aprenderás a escribir métodos que se lean como un índice de contenidos.
+## Ver también
+
+Si te ha gustado este artículo sobre nombres limpios, te recomiendo leer:
+
+- **[Métodos Narrativos: La Regla SRP](/blog/metodos-narrativos-la-regla-srp)** - Aprende a escribir métodos que se lean como un índice de contenidos aplicando Single Responsibility Principle.
+- **[Parámetros de Método: Self-Documenting Code](/blog/parametros-de-metodo-self-documenting-code)** - Descubre cómo transformar firmas de métodos crípticas en código auto-documentado usando enums semánticos.
 
 ¡Nos vemos en la próxima misión, ninja dev! 🥷

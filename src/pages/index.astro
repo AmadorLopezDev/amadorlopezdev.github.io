@@ -2,12 +2,49 @@
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Badge from '../components/Badge.astro';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Amador López Parra",
+  "jobTitle": "Senior Software Engineer",
+  "description": "Senior Software Engineer especializado en .NET 10, Clean Architecture, DDD y buenas prácticas de desarrollo",
+  "url": Astro.site?.toString(),
+  "sameAs": [
+    "https://www.linkedin.com/in/amadorlopez",
+    "https://github.com/amadorlopezdev"
+  ],
+  "knowsAbout": [
+    ".NET",
+    "C#",
+    "Clean Architecture",
+    "Domain-Driven Design",
+    "SOLID",
+    "Azure",
+    "TypeScript"
+  ]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Amador López Parra",
+  "url": Astro.site?.toString(),
+  "description": "Blog sobre desarrollo de software, arquitectura limpia y mejores prácticas",
+  "author": {
+    "@type": "Person",
+    "name": "Amador López Parra"
+  },
+  "inLanguage": "es-ES"
+};
 ---
 
 <Layout
   title="Inicio - Amador López Parra"
   description="Senior Software Engineer especializado en .NET 10, Clean Architecture, DDD y buenas prácticas de desarrollo. Blog sobre programación, arquitectura de software y desarrollo profesional."
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(websiteSchema)} />
   <section class="
     relative
     min-h-screen

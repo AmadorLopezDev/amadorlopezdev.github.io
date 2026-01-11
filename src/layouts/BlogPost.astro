@@ -9,7 +9,7 @@ const WORDS_PER_MINUTE = 200;
 const MAX_RELATED_POSTS = 3;
 
 const { frontmatter } = Astro.props;
-const { title, date, tags, image } = frontmatter;
+const { title, date, tags, image, imageAlt } = frontmatter;
 
 const formatDate = (dateString: string): string => {
   const dateObj = new Date(dateString);
@@ -71,11 +71,52 @@ const articleSchema = {
   "wordCount": wordCount,
   "timeRequired": `PT${readingTime}M`
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": Astro.site?.toString()
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": new URL("/content/blog", Astro.site).toString()
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": title,
+      "item": new URL(Astro.url.pathname, Astro.site).toString()
+    }
+  ]
+};
 ---
 
 <Layout title={title} description={frontmatter.description} image={image} type="article">
   <script type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   <article class="relative">
+
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-4">
+      <ol class="flex items-center gap-2 text-sm text-text-tertiary">
+        <li>
+          <a href="/" class="hover:text-primary transition-colors">Inicio</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li>
+          <a href="/content/blog" class="hover:text-primary transition-colors">Blog</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" class="text-text-secondary font-medium">{title}</li>
+      </ol>
+    </nav>
 
     <!-- Imagen destacada (hero) -->
     {image && (
@@ -86,7 +127,9 @@ const articleSchema = {
       ">
         <img
           src={image}
-          alt={title}
+          alt={imageAlt || title}
+          width="1200"
+          height="500"
           class="w-full h-full object-cover"
         />
         <!-- Overlay gradient -->
@@ -218,6 +261,8 @@ const articleSchema = {
                     <img
                       src={post.image}
                       alt={post.title}
+                      width="600"
+                      height="400"
                       class="
                         w-full h-full object-cover
                         transition-transform duration-300

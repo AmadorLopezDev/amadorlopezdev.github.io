@@ -5,6 +5,7 @@ date: "2025-01-11"
 layout: ../../layouts/BlogPost.astro
 tags: ["C#", "Clean Code", "Self-Documenting", "Parameters", ".NET", "Best Practices"]
 image: "/img/blog/2025-01-11-parametros-de-metodo.webp"
+imageAlt: "Código C# mostrando la transformación de parámetros primitivos confusos (Execute(2, true, false, 3, 'data.json')) a código auto-documentado con enums y Value Objects"
 ---
 
 Imagina que estás revisando código y te encuentras con esta línea:
@@ -662,11 +663,11 @@ Como diría Might Guy: *"El esfuerzo constante supera al talento natural"*. Cada
 
 ---
 
-**¿Has completado el Módulo 1?** Ahora dominas:
-1. **Naming semántico** (Artículo 1.1)
-2. **Métodos narrativos con SRP** (Artículo 1.2)
-3. **Parámetros auto-documentados** (Artículo 1.3)
+## Ver también
 
-**Próximo módulo**: Object Calisthenics - Reglas avanzadas de POO para código limpio.
+Si te ha gustado este artículo sobre parámetros auto-documentados, completa la serie:
+
+- **[El arte de nombrar: Semántica sobre Redundancia](/blog/el-arte-de-nombrar-semantica-sobre-redundancia)** - Domina el naming semántico eliminando redundancia en clases y propiedades.
+- **[Métodos Narrativos: La Regla SRP](/blog/metodos-narrativos-la-regla-srp)** - Escribe métodos que se lean como un índice de contenidos con Single Responsibility Principle.
 
 ¡Nos vemos en la próxima misión, ninja dev! 🥷

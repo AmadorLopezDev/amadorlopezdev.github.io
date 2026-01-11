@@ -5,6 +5,7 @@ date: "2025-01-11"
 layout: ../../layouts/BlogPost.astro
 tags: ["C#", "SOLID", "SRP", "Clean Code", ".NET", "Refactoring"]
 image: "/img/blog/2025-01-11-metodos-narrativos-srp.webp"
+imageAlt: "Método C# refactorizado mostrando niveles de abstracción claros con nombres narrativos que se leen como un índice de contenidos"
 ---
 
 Hay un momento en la vida de todo desarrollador en el que abres un método y te preguntas: *"¿Qué hace esto realmente?"*. Después de 200 líneas de código, múltiples niveles de anidación y validaciones mezcladas con lógica de negocio, te das cuenta de que estás frente a un **Método God** (Método Dios).
@@ -555,6 +556,11 @@ Como diría Rock Lee: *"El trabajo duro nunca traiciona"*. Cada método que refa
 
 ---
 
-**¿Quieres continuar aprendiendo?** En el próximo artículo hablaremos sobre **Parámetros de Método: El peligro de los tipos primitivos y booleanos**, donde aprenderás a escribir firmas de métodos auto-documentadas.
+## Ver también
+
+Si te ha interesado la aplicación de SRP en métodos, también te pueden interesar:
+
+- **[El arte de nombrar: Semántica sobre Redundancia](/blog/el-arte-de-nombrar-semantica-sobre-redundancia)** - Elimina la redundancia en nombres de clases y propiedades para reducir la carga cognitiva.
+- **[Parámetros de Método: Self-Documenting Code](/blog/parametros-de-metodo-self-documenting-code)** - Transforma firmas de métodos crípticas en código auto-documentado con enums semánticos.
 
 ¡Nos vemos en la próxima misión, ninja dev! 🥷
