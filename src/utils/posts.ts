@@ -1,40 +1,52 @@
-import type { Post, PaginatedPosts } from '../types/Post';
+import type { Post, PaginatedPosts, RawPostFrontmatter, IsoDateString } from '../types/Post';
+
+const ISO_DATE_SEPARATOR = 'T';
+const FALLBACK_POST_URL = '/';
 
 interface PostModule {
-  frontmatter: Omit<Post, 'url'>;
+  frontmatter: RawPostFrontmatter;
   url?: string;
 }
 
-function byDateDescThenTitleAsc(a: Post, b: Post): number {
-  const dateDiff = new Date(b.date).getTime() - new Date(a.date).getTime();
-  if (dateDiff !== 0) return dateDiff;
-  return a.title.localeCompare(b.title);
+function toIsoDateString(raw: string | Date): IsoDateString {
+  const isoFull = new Date(raw).toISOString();
+  return isoFull.split(ISO_DATE_SEPARATOR)[0] as IsoDateString;
 }
 
-export function getSortedPosts(): Post[] {
-  const postsImport = Object.values(
+function byDateDescThenTitleAsc(postA: Post, postB: Post): number {
+  const dateDiff = new Date(postB.date).getTime() - new Date(postA.date).getTime();
+  if (dateDiff !== 0) return dateDiff;
+  return postA.title.localeCompare(postB.title);
+}
+
+function loadPostModules(): PostModule[] {
+  return Object.values(
     import.meta.glob<PostModule>("../pages/blog/*.md", { eager: true })
   );
+}
 
-  const posts: Post[] = postsImport.map((post) => ({
-    ...post.frontmatter,
-    url: post.url || '/',
-  }));
+function toPost(module: PostModule): Post {
+  return {
+    ...module.frontmatter,
+    date: toIsoDateString(module.frontmatter.date),
+    url: module.url ?? FALLBACK_POST_URL,
+  };
+}
 
-  posts.sort(byDateDescThenTitleAsc);
-
-  return posts;
+export function getSortedPosts(): Readonly<Post[]> {
+  const posts = loadPostModules().map(toPost);
+  return [...posts].sort(byDateDescThenTitleAsc);
 }
 
 export function getPaginatedPosts(
-  posts: Post[],
+  posts: Readonly<Post[]>,
   currentPage: number,
   postsPerPage: number
 ): PaginatedPosts {
   const totalPages = Math.ceil(posts.length / postsPerPage);
   const start = (currentPage - 1) * postsPerPage;
   const end = start + postsPerPage;
-  const paginatedPosts = posts.slice(start, end);
+  const paginatedPosts = [...posts].slice(start, end);
 
   return { paginatedPosts, totalPages };
 }

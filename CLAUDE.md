@@ -37,7 +37,7 @@ Este es un **repositorio de configuración de Claude Code**, NO un proyecto de c
 
 ### Flujo Spec-Kit (principal)
 - `/project.constitution` — Carga contexto resumido del proyecto
-- `/project.specify <name>` — Crea `specs/<name>/spec.md` de forma interactiva
+- `/project.specify <name> [brief]` — Crea `specs/<name>/spec.md`. El segundo argumento es opcional: ruta a un archivo de contexto o texto libre. Si se aporta, infiere los campos del brief y omite las preguntas interactivas.
 - `/project.plan <name>` — Crea `specs/<name>/plan.md` + archivos de fase (sin implementar)
 - `/project.implement <name>` — Implementa fase a fase: revisión + confirmación + marcado
 - `/project.close <name>` — Cierra la spec: valida completitud, actualiza estado y genera commit
