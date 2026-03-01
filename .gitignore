@@ -27,4 +27,6 @@ githubamadorlopezdev.pub
 .playwright-mcp/
 .claude/
 .vscode/
-.github/
+.github/copilot-instructions.md
+.github/instructions
+.github/prompts
