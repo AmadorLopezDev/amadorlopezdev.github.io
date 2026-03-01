@@ -1,7 +1,7 @@
 ---
 title: "El camino del ninja dev: object calisthenics"
 description: "Las 9 reglas de Object Calisthenics con ejemplos en C# y TypeScript. Aprende a escribir código más limpio, modular y mantenible siguiendo estos jutsus del ninja dev."
-date: "2026-03-01"
+date: "2026-03-01T16:20:00Z"
 layout: ../../layouts/BlogPost.astro
 tags: ["Object Calisthenics", "Clean Code", "C#", "TypeScript", "POO"]
 image: "/img/blog/2026-03-01-object-calisthenics.webp"

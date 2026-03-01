@@ -1,7 +1,7 @@
 ---
 title: "Mi Primera Entrada"
 description: "Una introducción al tema del blog."
-date: "2025-01-14"
+date: "2025-01-01"
 layout: ../../layouts/BlogPost.astro
 tags: ["Blog", "General"]
 image: "/img/blog/2025-02-18-first-post.png"
