@@ -40,8 +40,10 @@ Este es un **repositorio de configuración de Claude Code**, NO un proyecto de c
 - `/project.specify <name>` — Crea `specs/<name>/spec.md` de forma interactiva
 - `/project.plan <name>` — Crea `specs/<name>/plan.md` + archivos de fase (sin implementar)
 - `/project.implement <name>` — Implementa fase a fase: revisión + confirmación + marcado
+- `/project.close <name>` — Cierra la spec: valida completitud, actualiza estado y genera commit
 
 Cada fase = baby commit independiente. No avanza sin revisión aprobada y confirmación del usuario.
+El cierre es el paso final obligatorio: marca la spec como `completed` y genera el commit de documentación.
 
 ### Comandos Adicionales
 - `/project.help` — Referencia rápida de comandos, agentes y flujos
