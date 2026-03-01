@@ -5,6 +5,12 @@ interface PostModule {
   url?: string;
 }
 
+function byDateDescThenTitleAsc(a: Post, b: Post): number {
+  const dateDiff = new Date(b.date).getTime() - new Date(a.date).getTime();
+  if (dateDiff !== 0) return dateDiff;
+  return a.title.localeCompare(b.title);
+}
+
 export function getSortedPosts(): Post[] {
   const postsImport = Object.values(
     import.meta.glob<PostModule>("../pages/blog/*.md", { eager: true })
@@ -15,7 +21,7 @@ export function getSortedPosts(): Post[] {
     url: post.url || '/',
   }));
 
-  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  posts.sort(byDateDescThenTitleAsc);
 
   return posts;
 }
